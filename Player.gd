@@ -4,8 +4,8 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var velocity = Vector2(0,0)
-var gravity = 981
-var speed = 100
+var gravity = 981*2
+var speed = 200
 var jumpForce = 500
 # Called when the node enters the scene tree for the first time.
 func _ready():

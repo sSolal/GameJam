@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ressources/tmp_tilemap.png" type="Texture" id=1]
+
+[node name="Tilemap_source" type="Node2D"]
+
+[node name="tmp_tilemap" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tmp_tilemap"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tmp_tilemap/StaticBody2D"]
+polygon = PoolVector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[node name="tmp_tilemap2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tmp_tilemap2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tmp_tilemap2/StaticBody2D"]
+polygon = PoolVector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[node name="tmp_tilemap3" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tmp_tilemap3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tmp_tilemap3/StaticBody2D"]
+polygon = PoolVector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[node name="tmp_tilemap4" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tmp_tilemap4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tmp_tilemap4/StaticBody2D"]
+polygon = PoolVector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[node name="tmp_tilemap5" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tmp_tilemap5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tmp_tilemap5/StaticBody2D"]
+polygon = PoolVector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[node name="tmp_tilemap6" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 64, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tmp_tilemap6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tmp_tilemap6/StaticBody2D"]
+polygon = PoolVector2Array( 16, -16, 16, 16, -16, 16, -16, -16 )
