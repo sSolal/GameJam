@@ -19,6 +19,11 @@ func _process(delta):
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 	velocity.x = velocity.x*0.95
 	$Body.flip_h = velocity.x<0
+	if abs(velocity.x)<25:
+		if $Body.animation!="idle":
+			$Body.play("idle")
+	elif $Body.animation!="run":
+		$Body.play("run")
 	if Input.is_action_pressed("ui_left") and not flag:
 		velocity.x = -speed
 	if Input.is_action_pressed("ui_right") and not flag:
