@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var b = "text"
 var velocity = Vector2(0,0)
 var gravity = 981*2
-var speed = 85
+var speed = 100#85
 var jumpForce = 400
 var sideJumpForce = 280
 var flag = false
