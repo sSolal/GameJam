@@ -13,11 +13,11 @@ func _process(delta):
 	pass
 	
 func _on_Button3_pressed():
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://Scenes/Main.tscn")
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Tuto.tscn")
+	get_tree().change_scene("res://Scenes/Tuto.tscn")
 
 
 func _on_Button2_pressed():
