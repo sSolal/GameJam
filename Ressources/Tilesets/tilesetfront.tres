@@ -49,4 +49,3 @@ points = PoolVector2Array( 4, 4, 36, 4, 36, 36, 4, 36 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
-
