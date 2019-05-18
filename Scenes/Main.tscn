@@ -53,3 +53,4 @@ __meta__ = {
 position = Vector2( 90.2809, 508.653 )
 z_index = 1
 
+[connection signal="metamorphose" from="World" to="Player" method="metamorphose"]

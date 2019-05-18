@@ -3,6 +3,8 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+signal metamorphose
+
 var x_min = 0
 var x_max = 50
 var y_min = -50
@@ -70,6 +72,7 @@ func chunk(r):
 		get_child(currentMeta).set_cell(x,y,-1)
 		get_child(aim).set_cell(x,y,tile)"""
 func switch(aim):
+	emit_signal("metamorphose")
 	for r in range(r_max):
 		chunk(r)
 		yield(get_tree().create_timer(0.2), "timeout")
