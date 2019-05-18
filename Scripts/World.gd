@@ -35,7 +35,9 @@ func _process(delta):
 			var pos = $Meta0.world_to_map(player.position)
 			x=pos.x
 			y=pos.y
-			var tile = get_child(2+currentMeta).get_cell(x,y+1)
+			var tile = get_child(2+currentMeta).get_cell(x,y)
+			#get_child(2+currentMeta).set_cell(x,y,-1)
+			#get_child(2+aim).set_cell(x,y,tile)
 			switch(aim)
 			
 func chunk(r):
@@ -77,7 +79,6 @@ func chunk(r):
 		get_child(2+currentMeta).set_cell(xp,o,-1)
 		get_child(2+aim).set_cell(xp,o,tile)
 		
-	r+=1
 """	
 	for o in range(10):
 		x+=1
@@ -91,7 +92,7 @@ func chunk(r):
 		get_child(aim).set_cell(x,y,tile)"""
 func switch(aim):
 	emit_signal("metamorphose")
-	for r in range(1,r_max):
+	for r in range(0,r_max):
 		chunk(r)
 		yield(get_tree().create_timer(0.2), "timeout")
 	switching = false

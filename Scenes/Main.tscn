@@ -24,7 +24,7 @@ margin_bottom = 300.933
 color = Color( 0.137255, 0.137255, 0.137255, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90.2809, 508.653 )
+position = Vector2( 740.236, 70.7003 )
 z_index = 1
 
 [node name="World" type="Node2D" parent="."]
@@ -59,8 +59,9 @@ mode = 2
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
+collision_mask = 2
+occluder_light_mask = 0
 format = 1
 tile_data = PoolIntArray( -589794, 5, 0, -589793, 5, 0, -589792, 5, 0, -589791, 5, 0, -589790, 5, 0, -589789, 5, 0, -589788, 5, 0, -589787, 5, 0, -524258, 4, 0, -524257, 4, 0, -524256, 4, 0, -524255, 4, 0, -524254, 4, 0, -524253, 4, 0, -524252, 4, 0, -524251, 4, 0, -458722, 3, 0, -458721, 3, 0, -458720, 3, 0, -458719, 3, 0, -458718, 3, 0, -458717, 3, 0, -458716, 3, 0, -458715, 3, 0 )
 __meta__ = {
@@ -73,8 +74,9 @@ mode = 2
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
+collision_mask = 2
+occluder_light_mask = 0
 format = 1
 __meta__ = {
 "_edit_lock_": true

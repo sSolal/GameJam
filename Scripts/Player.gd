@@ -11,6 +11,8 @@ var sideJumpForce = 280
 var run_speed = 1.7
 var flag = false
 var run = false
+var diving = false
+var swimForce = 200
 
 var anim
 var current_anim = "idle"
@@ -62,8 +64,9 @@ func _process(delta):
 			#$Body.play("run")
 			#anim.travel("idle")
 			velocity.x = velocity.x/run_speed
+	if diving and Input.is_action_pressed("ui_up"):
+		velocity.y=-swimForce
 	if Input.is_action_just_pressed("ui_up"):
-		
 		if is_on_floor():
 			$Jump.play()
 			velocity.y=-jumpForce
@@ -72,17 +75,21 @@ func _process(delta):
 			velocity.y=-sideJumpForce	
 			velocity.x=-sign(velocity.x)*sideJumpForce
 			flag = true
-			
+	var detected = $Detect.get_overlapping_bodies()
+	if len(detected)!=0:
+		velocity*=0.5
+		if not diving :
+			diving = true
+			$Water.play()
+		
+	else:
+		diving = false
 	if is_on_floor():
-		if abs(velocity.x)<25:
-			anim.travel("idle")
 		if not was_on_floor:
 			$Land.play()
 			was_on_floor = true
 	else:
 		was_on_floor = false
-		if velocity.y>12:
-			anim.travel("Fall")
 		
 	if flag == true and is_on_floor() or Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
 		flag = false
