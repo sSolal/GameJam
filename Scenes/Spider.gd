@@ -31,7 +31,7 @@ func _process(delta):
 				flag = true
 	"""if abs(velocity.x)<speed and not flag:
 		jump = true"""
-	if $AnimatedSprite.is_playing():
+	if flag and $AnimatedSprite.is_playing():
 		$AnimatedSprite.stop()
 	if not flag and not $AnimatedSprite.is_playing():
 		$AnimatedSprite.play()
