@@ -9,9 +9,10 @@
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -2.0
-margin_right = 1026.0
-margin_bottom = 603.0
+margin_left = -1483.97
+margin_top = -721.509
+margin_right = 2516.03
+margin_bottom = 1278.49
 color = Color( 0.203922, 0.203922, 0.203922, 1 )
 
 [node name="Button" type="Button" parent="."]
@@ -39,6 +40,10 @@ rect_scale = Vector2( 1.52425, 1.52425 )
 size_flags_horizontal = 3
 icon = ExtResource( 4 )
 flat = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 510.842, 302.136 )
+current = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
