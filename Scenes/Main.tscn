@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/World.gd" type="Script" id=4]
 [ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=5]
 [ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=7]
 
 [node name="Node" type="Node"]
 
@@ -88,4 +89,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" parent="CanvasLayer" instance=ExtResource( 7 )]
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]
