@@ -18,9 +18,23 @@ func _process(delta):
 	velocity.y+=981*delta
 	$AnimatedSprite.flip_h = position.x-player.position.x<0
 	velocity.x = speed*(int($AnimatedSprite.flip_h)-0.5)*2
-	if jump : 
+	"""if jump : 
 		velocity.y = -jumpForce
-		jump = false
+		jump = false"""
 	velocity = move_and_slide(velocity, Vector2(0,-1))
-	if abs(velocity.x)<10:
-		jump = true
+	"""
+	jump = false"""
+	var flag = false
+	for i in range(get_slide_count() - 1):
+			var collision = get_slide_collision(i)
+			if collision.collider.name == "Player" or collision.collider.name=="SpiderWall" or "Spider" in collision.collider.name:
+				flag = true
+	"""if abs(velocity.x)<speed and not flag:
+		jump = true"""
+	if $AnimatedSprite.is_playing():
+		$AnimatedSprite.stop()
+	if not flag and not $AnimatedSprite.is_playing():
+		$AnimatedSprite.play()
+	
+	
+		
