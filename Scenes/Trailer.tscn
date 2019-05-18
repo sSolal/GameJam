@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Trailer.gd" type="Script" id=1]
-[ext_resource path="res://Dessin principal du jeu.png" type="Texture" id=2]
+[ext_resource path="res://Ressources/Dessin principal du jeu.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Fonts/new_dynamicfont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/skipbutton.gd" type="Script" id=4]
 
@@ -50,15 +50,15 @@ texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 modulate = Color( 1, 1, 1, 0.427451 )
-margin_left = -506.616
+margin_left = -473.616
 margin_top = 67.4636
-margin_right = 446.384
+margin_right = 479.384
 margin_bottom = 291.464
 
 [node name="Label" type="Label" parent="Camera2D"]
-margin_left = -582.616
+margin_left = -544.76
 margin_top = 22.4636
-margin_right = 513.384
+margin_right = 551.24
 margin_bottom = 346.464
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -71,21 +71,20 @@ align = 1
 valign = 1
 
 [node name="Button" type="Button" parent="Camera2D"]
-margin_left = 331.032
+margin_left = 360.032
 margin_top = 224.365
-margin_right = 443.032
+margin_right = 472.032
 margin_bottom = 290.365
 flat = true
 script = ExtResource( 4 )
 
-[node name="Label2" type="Label" parent="Camera2D"]
-margin_left = 352.36
-margin_top = 240.438
-margin_right = 462.36
-margin_bottom = 301.438
+[node name="Label2" type="Label" parent="Camera2D/Button"]
+margin_left = 19.0161
+margin_top = 13.073
+margin_right = 129.016
+margin_bottom = 74.073
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SKIP"
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_Button_pressed"]
