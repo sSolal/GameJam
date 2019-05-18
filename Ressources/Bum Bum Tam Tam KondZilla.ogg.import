@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bum Bum Tam Tam KondZilla.ogg-542ab2f2eebdc3630b14a626814d7986.oggstr"
+
+[deps]
+
+source_file="res://Ressources/Bum Bum Tam Tam KondZilla.ogg"
+dest_files=[ "res://.import/Bum Bum Tam Tam KondZilla.ogg-542ab2f2eebdc3630b14a626814d7986.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

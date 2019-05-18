@@ -39,7 +39,6 @@ rect_scale = Vector2( 1.52425, 1.52425 )
 size_flags_horizontal = 3
 icon = ExtResource( 4 )
 flat = true
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

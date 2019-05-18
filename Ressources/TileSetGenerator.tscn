@@ -105,4 +105,3 @@ occluder = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite7/StaticBody2D"]
 polygon = PoolVector2Array( -20, -16, 16, -16, 16, 20, -20, 20 )
-
