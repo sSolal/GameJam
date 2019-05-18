@@ -32,9 +32,9 @@ icon = ExtResource( 3 )
 flat = true
 
 [node name="Button3" type="Button" parent="."]
-margin_left = 598.799
+margin_left = 599.799
 margin_top = 227.586
-margin_right = 866.799
+margin_right = 867.799
 margin_bottom = 307.586
 rect_scale = Vector2( 1.52425, 1.52425 )
 size_flags_horizontal = 3
