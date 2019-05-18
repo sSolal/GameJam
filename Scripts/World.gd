@@ -7,14 +7,10 @@ signal metamorphose
 
 onready var spider_scene = preload("res://Scenes/Spider.tscn")
 onready var dog_scene = preload("res://Scenes/Dog.tscn")
-var x_min = 0
-var x_max = 50
-var y_min = -50
-var y_max = 0
 
 var x = 0
 var y = 0
-var r_max = 35
+var r_max = 40
 
 var currentMeta = 0
 var aim = 0
@@ -106,9 +102,15 @@ func switch(aim):
 			var newdog = dog_scene.instance()
 			newdog.position = mob.position
 			newdog.player = player
-			print(mob.position)
 			$Mobs.remove_child(mob)
 			$Mobs.add_child(newdog)
+	if aim==0:
+		for mob in $Mobs.get_children():
+			var newspid = spider_scene.instance()
+			newspid.position = mob.position
+			newspid.player = player
+			$Mobs.remove_child(mob)
+			$Mobs.add_child(newspid)
 	switching = false
 	currentMeta = aim
 	
