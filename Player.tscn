@@ -167,6 +167,7 @@ script = ExtResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 2 )
+texture_scale = 0.4
 shadow_enabled = true
 
 [node name="OldBody" type="AnimatedSprite" parent="."]
