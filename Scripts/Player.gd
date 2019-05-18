@@ -107,6 +107,9 @@ func v_to_anim():
 		else:
 			return "Jump"
 		
+func metamorphose():
+	$Metamorphose_moche.scale=Vector2(0.1,0.1)
+	$Metamorphose_moche.visible = true
 func die(msg):
 	print("Died")
 	get_tree().reload_current_scene()

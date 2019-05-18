@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Character/light.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Ressources/Character/spritesheet.png" type="Texture" id=8]
 [ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Ressources/Sounds/BounceYoFrankie.wav" type="AudioStream" id=10]
+[ext_resource path="res://Ressources/Metamorphose_moche.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Metamorphose_moche.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -208,3 +210,9 @@ stream = ExtResource( 9 )
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
+
+[node name="Metamorphose_moche" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 11 )
+script = ExtResource( 12 )
+
