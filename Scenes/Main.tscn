@@ -143,4 +143,5 @@ shape = SubResource( 1 )
 [node name="Obstacle2" type="CollisionShape2D" parent="MobObstacles/SpiderWall"]
 position = Vector2( 215.298, 0.875583 )
 shape = SubResource( 1 )
+
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]
