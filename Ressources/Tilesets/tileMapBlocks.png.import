@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tuto1.png-9673e2dd7ee09faed7582a037641adf9.stex"
+path="res://.import/tileMapBlocks.png-674a65cf4afa83101ec8cc85fc35999f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/tuto1.png"
-dest_files=[ "res://.import/tuto1.png-9673e2dd7ee09faed7582a037641adf9.stex" ]
+source_file="res://Ressources/Tilesets/tileMapBlocks.png"
+dest_files=[ "res://.import/tileMapBlocks.png-674a65cf4afa83101ec8cc85fc35999f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

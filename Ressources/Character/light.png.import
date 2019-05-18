@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tileset test.png-a2f07f8a078106464be94bc39dd69269.stex"
+path="res://.import/light.png-ac74d626fbc47493ee383fbb54df4a56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/Tileset test.png"
-dest_files=[ "res://.import/Tileset test.png-a2f07f8a078106464be94bc39dd69269.stex" ]
+source_file="res://Ressources/Character/light.png"
+dest_files=[ "res://.import/light.png-ac74d626fbc47493ee383fbb54df4a56.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

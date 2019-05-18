@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tuto3.png-ee4bd17846273f6c223a5d2c98b19220.stex"
+path="res://.import/Tileset test.png-df2874f0fccc50e99beca0e958affc0a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/tuto3.png"
-dest_files=[ "res://.import/tuto3.png-ee4bd17846273f6c223a5d2c98b19220.stex" ]
+source_file="res://Ressources/Tilesets/Tileset test.png"
+dest_files=[ "res://.import/Tileset test.png-df2874f0fccc50e99beca0e958affc0a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -90,10 +90,11 @@ func _process(delta):
 		run = false
 	var next_anim = v_to_anim()
 	if next_anim != current_anim:
-		print(next_anim)
+		#print(next_anim)
 		anim.travel(next_anim)
 		current_anim = next_anim
-		
+	if position.y>1000:
+		die("Vous avez quitté le connu")
 func v_to_anim():
 	if is_on_floor():
 		if abs(velocity.x)>=speed*run_speed:
@@ -106,3 +107,6 @@ func v_to_anim():
 		else:
 			return "Jump"
 		
+func die(msg):
+	print("Died")
+	get_tree().change_scene("res://Main.tscn")

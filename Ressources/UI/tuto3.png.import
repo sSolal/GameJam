@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Character_pixel_test_2.png-2e1be84167776472b5e3eb10f2d1d1b3.stex"
+path="res://.import/tuto3.png-7d54efd9b228dd297b45a850e0bc6bd0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/Character_pixel_test_2.png"
-dest_files=[ "res://.import/Character_pixel_test_2.png-2e1be84167776472b5e3eb10f2d1d1b3.stex" ]
+source_file="res://Ressources/UI/tuto3.png"
+dest_files=[ "res://.import/tuto3.png-7d54efd9b228dd297b45a850e0bc6bd0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
