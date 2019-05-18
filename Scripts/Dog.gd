@@ -4,7 +4,6 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var velocity = Vector2(0,0)
-#export (NodePath) var PlayerPath
 var speed = 25
 var jumpForce = 200
 var player

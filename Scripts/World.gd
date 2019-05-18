@@ -5,6 +5,8 @@ extends Node2D
 # var b = "text"
 signal metamorphose
 
+onready var spider_scene = preload("res://Scenes/Spider.tscn")
+onready var dog_scene = preload("res://Scenes/Dog.tscn")
 var x_min = 0
 var x_max = 50
 var y_min = -50
@@ -20,10 +22,13 @@ var aim = 0
 var switching = false
 
 export (NodePath) var PlayerPath
+
 var player
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_node(PlayerPath)
+	for mob in $Mobs.get_children():
+			mob.player = player
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -95,6 +100,14 @@ func switch(aim):
 	for r in range(0,r_max):
 		chunk(r)
 		yield(get_tree().create_timer(0.2), "timeout")
+	if aim==1:
+		for mob in $Mobs.get_children():
+			var newdog = dog_scene.instance()
+			newdog.position = mob.position
+			newdog.player = player
+			print(mob.position)
+			$Mobs.remove_child(mob)
+			$Mobs.add_child(newdog)
 	switching = false
 	currentMeta = aim
 	

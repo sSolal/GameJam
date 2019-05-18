@@ -95,17 +95,14 @@ z_index = 2
 [node name="Spider" parent="World/Mobs" instance=ExtResource( 6 )]
 position = Vector2( 580.411, 147.806 )
 z_index = 1
-PlayerPath = NodePath("../../../Player")
 
 [node name="Spider2" parent="World/Mobs" instance=ExtResource( 6 )]
 position = Vector2( 844.511, 122.156 )
 z_index = 1
-PlayerPath = NodePath("../../../Player")
 
 [node name="Spider3" parent="World/Mobs" instance=ExtResource( 6 )]
 position = Vector2( 348.66, 153.715 )
 z_index = 1
-PlayerPath = NodePath("../../../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 editor/display_folded = true
