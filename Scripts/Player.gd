@@ -7,7 +7,7 @@ export (NodePath) var TextureProgressPath
 var world
 var BarLife
 var velocity = Vector2(0,0)
-var gravity = 981*2
+var gravity = 981
 var speed = 100#85
 var jumpForce = 400
 var sideJumpForce = 280
@@ -28,7 +28,7 @@ func _ready():
 	$AnimationTree.active = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocity.y+=981*delta
+	velocity.y+=gravity*delta
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 	velocity.x = velocity.x*0.95
 	$Body.flip_h = velocity.x<0
@@ -129,6 +129,15 @@ func die(msg):
 	print("Died")
 	get_tree().reload_current_scene()
 	
+func hit(side, damage = 1, knockback = 8):
+	if invin == false:
+		invin = true
+		position.x += 8*side
+		for h in range(1,21):
+			yield(get_tree().create_timer(0.3),"timeout")
+			BarLife.value += -damage
+		invin = false
+"""
 func hitright():
 	if invin == false:
 		invin = true
@@ -145,4 +154,4 @@ func hitleft():
 			yield(get_tree().create_timer(0.3),"timeout")
 			BarLife.value += -1
 		invin = false
-		
+"""

@@ -4,8 +4,8 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var velocity = Vector2(0,0)
-var speed = 25
-var jumpForce = 200
+var speed = 55
+#var jumpForce = 200
 var player
 var jump = false
 # Called when the node enters the scene tree for the first time.
@@ -27,8 +27,13 @@ func _process(delta):
 	var flag = false
 	for i in range(get_slide_count() - 1):
 			var collision = get_slide_collision(i)
-			if collision.collider.name == "Player" or collision.collider.name=="SpiderWall" or "Spider" in collision.collider.name:
+			if collision.collider.name == "Player" or collision.collider.name=="MobWalls" or "Dog" in collision.collider.name:
 				flag = true
+			if collision.collider.name == "Player":
+				if player.position.x - position.x >0:
+					player.hit(1,1,16)
+				if player.position.x - position.x <0:
+					player.hit(-1,1,16)
 	"""if abs(velocity.x)<speed and not flag:
 		jump = true"""
 	if flag and $AnimatedSprite.is_playing():
