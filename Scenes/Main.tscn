@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/World.gd" type="Script" id=4]
-[ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=5]
-[ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=6]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=3]
+[ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=4]
+[ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=5]
+[ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=8]
 [ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=9]
@@ -34,29 +34,13 @@ color = Color( 0.137255, 0.137255, 0.137255, 1 )
 position = Vector2( 103.896, 474.885 )
 z_index = 1
 
-[node name="Spider" parent="." instance=ExtResource( 3 )]
-position = Vector2( 580.411, 147.806 )
-z_index = 1
-PlayerPath = NodePath("../Player")
-
-[node name="Spider2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 844.511, 122.156 )
-z_index = 1
-PlayerPath = NodePath("../Player")
-
-[node name="Spider3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 348.66, 153.715 )
-z_index = 1
-PlayerPath = NodePath("../Player")
-
 [node name="World" type="Node2D" parent="."]
-editor/display_folded = true
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 PlayerPath = NodePath("../Player")
 
 [node name="Meta0" type="TileMap" parent="World"]
 mode = 2
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 format = 1
@@ -68,7 +52,7 @@ __meta__ = {
 [node name="Meta1" type="TileMap" parent="World"]
 z_index = 1
 mode = 2
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 format = 1
@@ -79,7 +63,7 @@ __meta__ = {
 [node name="FrontMeta0" type="TileMap" parent="World"]
 z_index = 2
 mode = 2
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 collision_layer = 2
@@ -94,7 +78,7 @@ __meta__ = {
 [node name="FrontMeta1" type="TileMap" parent="World"]
 z_index = 3
 mode = 2
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 collision_layer = 2
@@ -105,7 +89,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Mobs" type="Node2D" parent="World"]
+z_index = 2
+
+[node name="Spider" parent="World/Mobs" instance=ExtResource( 6 )]
+position = Vector2( 580.411, 147.806 )
+z_index = 1
+PlayerPath = NodePath("../../../Player")
+
+[node name="Spider2" parent="World/Mobs" instance=ExtResource( 6 )]
+position = Vector2( 844.511, 122.156 )
+z_index = 1
+PlayerPath = NodePath("../../../Player")
+
+[node name="Spider3" parent="World/Mobs" instance=ExtResource( 6 )]
+position = Vector2( 348.66, 153.715 )
+z_index = 1
+PlayerPath = NodePath("../../../Player")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Button" parent="CanvasLayer" instance=ExtResource( 7 )]
 
@@ -122,6 +125,7 @@ value = 60.0
 texture_progress = ExtResource( 9 )
 
 [node name="MobObstacles" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SpiderWall" type="StaticBody2D" parent="MobObstacles"]
 position = Vector2( 714.911, 211.874 )
