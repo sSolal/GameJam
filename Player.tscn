@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Character/light.png" type="Texture" id=2]
 [ext_resource path="res://Idle animation/Idle 01.png" type="Texture" id=3]
 [ext_resource path="res://Idle animation/Idle 02.png" type="Texture" id=4]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Ressources/Character/spritesheet.png" type="Texture" id=8]
 [ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Ressources/Sounds/BounceYoFrankie.wav" type="AudioStream" id=10]
-
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

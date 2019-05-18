@@ -1,13 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/UI/tuto1.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/UI/tuto2.png" type="Texture" id=3]
 [ext_resource path="res://Ressources/UI/tuto3.png" type="Texture" id=4]
 [ext_resource path="res://Ressources/Tilesets/tutoTileSet.tres" type="TileSet" id=5]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
-
-
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 
 [node name="Node" type="Node"]
 
