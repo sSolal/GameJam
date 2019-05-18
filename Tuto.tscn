@@ -29,17 +29,17 @@ position = Vector2( 663.367, 462.331 )
 scale = Vector2( 0.525463, 0.525463 )
 
 [node name="tuto1" type="Sprite" parent="Tutos"]
-position = Vector2( -795.898, 15.9784 )
-scale = Vector2( 0.942358, 0.942358 )
+position = Vector2( -900.749, 43.1618 )
+scale = Vector2( 0.790664, 0.790664 )
 texture = ExtResource( 2 )
 
 [node name="tuto2" type="Sprite" parent="Tutos"]
-position = Vector2( -412.389, -40.963 )
+position = Vector2( -484.878, 10.8151 )
 scale = Vector2( 0.961571, 0.961571 )
 texture = ExtResource( 3 )
 
 [node name="tuto3" type="Sprite" parent="Tutos"]
-position = Vector2( 728.622, -172.116 )
+position = Vector2( 552.576, -117.749 )
 texture = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -54,6 +54,5 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( 90.2809, 508.653 )
+position = Vector2( 91.6413, 505.932 )
 z_index = 1
-
