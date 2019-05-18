@@ -27,15 +27,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=24]
+[sub_resource type="CircleShape2D" id=2]
 radius = 96.5498
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 9.52248
 height = 28.2856
 
-[sub_resource type="Animation" id=3]
-resource_name = "Dash"
+[sub_resource type="Animation" id=4]
 length = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -50,8 +49,7 @@ tracks/0/keys = {
 "values": [ 7 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Fall"
+[sub_resource type="Animation" id=5]
 length = 0.3
 step = 0.05
 tracks/0/type = "value"
@@ -67,7 +65,7 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.5
 step = 0.05
 tracks/0/type = "value"
@@ -83,7 +81,7 @@ tracks/0/keys = {
 "values": [ 8, 9 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.5
 loop = true
 step = 0.01
@@ -100,7 +98,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -116,22 +114,20 @@ tracks/0/keys = {
 "values": [ 2, 4, 5, 6 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Dash"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Fall"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Jump"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Run"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
@@ -140,33 +136,35 @@ animation = "idle"
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=22]
-states/Dash/node = SubResource( 8 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=23]
+states/Dash/node = SubResource( 9 )
 states/Dash/position = Vector2( 24, 158 )
-states/Fall/node = SubResource( 9 )
+states/Fall/node = SubResource( 10 )
 states/Fall/position = Vector2( 458, 170 )
-states/Jump/node = SubResource( 10 )
+states/Jump/node = SubResource( 11 )
 states/Jump/position = Vector2( 303, 95 )
-states/Run/node = SubResource( 11 )
+states/Run/node = SubResource( 12 )
 states/Run/position = Vector2( 138, 223 )
-states/idle/node = SubResource( 12 )
+states/idle/node = SubResource( 13 )
 states/idle/position = Vector2( 144, 95 )
-transitions = [ "idle", "Jump", SubResource( 13 ), "Jump", "Fall", SubResource( 14 ), "Run", "Jump", SubResource( 15 ), "Fall", "Run", SubResource( 16 ), "Fall", "idle", SubResource( 17 ), "idle", "Dash", SubResource( 18 ), "Dash", "Run", SubResource( 19 ), "Run", "Dash", SubResource( 20 ), "Dash", "idle", SubResource( 21 ) ]
+transitions = [ "idle", "Jump", SubResource( 14 ), "Jump", "Fall", SubResource( 15 ), "Run", "Jump", SubResource( 16 ), "Fall", "Run", SubResource( 17 ), "Fall", "idle", SubResource( 18 ), "idle", "Dash", SubResource( 19 ), "Dash", "Run", SubResource( 20 ), "Run", "Dash", SubResource( 21 ), "Dash", "idle", SubResource( 22 ) ]
 graph_offset = Vector2( -233, 67 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -199,23 +197,23 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="SubBody" type="CollisionShape2D" parent="Detect"]
-shape = SubResource( 24 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.569572, 0.234953 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Dash = SubResource( 3 )
-anims/Fall = SubResource( 4 )
-anims/Jump = SubResource( 5 )
-anims/Run = SubResource( 6 )
-anims/idle = SubResource( 7 )
+anims/Dash = SubResource( 4 )
+anims/Fall = SubResource( 5 )
+anims/Jump = SubResource( 6 )
+anims/Run = SubResource( 7 )
+anims/idle = SubResource( 8 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 22 )
+tree_root = SubResource( 23 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 23 )
+parameters/playback = SubResource( 24 )
 
 [node name="Water" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
@@ -232,4 +230,3 @@ scale = Vector2( 0.1, 0.1 )
 z_index = 5
 texture = ExtResource( 12 )
 script = ExtResource( 13 )
-

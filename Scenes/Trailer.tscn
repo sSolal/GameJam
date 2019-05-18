@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Trailer.gd" type="Script" id=1]
+[ext_resource path="res://Dessin principal du jeu.png" type="Texture" id=2]
+[ext_resource path="res://Ressources/Fonts/new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/skipbutton.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "CameraTrailer"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 499, 300 ), Vector2( 530, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.556314, 0.556314 ), Vector2( 0.6, 0.6 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/CameraTrailer = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 530, 300 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.427451 )
+margin_left = 40.0
+margin_top = 366.0
+margin_right = 993.0
+margin_bottom = 590.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = -36.0
+margin_top = 321.0
+margin_right = 1060.0
+margin_bottom = 645.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Dans un futur lointain, en orbite autour de Butters, un
+Butterlarva qui n'arrivait pas à devenir Butterfly reçu l'aide
+du ButterBoss, on lui confie un objet très technologique
+lui permettant de transformer son
+environemment."
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 877.648
+margin_top = 522.901
+margin_right = 989.648
+margin_bottom = 588.901
+flat = true
+script = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="Button"]
+margin_left = 21.3275
+margin_top = 16.0732
+margin_right = 131.328
+margin_bottom = 77.0732
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SKIP"
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

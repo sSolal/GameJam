@@ -18,4 +18,5 @@ position = Vector2( 77.3558, 36.9198 )
 scale = Vector2( 0.445836, 0.248127 )
 texture = ExtResource( 3 )
 energy = 1.62
+shadow_item_cull_mask = 2
 [connection signal="pressed" from="." to="." method="_on_Button_pressed"]
