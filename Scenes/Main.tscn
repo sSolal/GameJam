@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=5]
 [ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=6]
 [ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5, 18 )
 
 [node name="Node" type="Node"]
 
@@ -34,7 +37,18 @@ position = Vector2( 580.411, 147.806 )
 z_index = 1
 PlayerPath = NodePath("../Player")
 
+[node name="Spider2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 844.511, 122.156 )
+z_index = 1
+PlayerPath = NodePath("../Player")
+
+[node name="Spider3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 350.511, 125.956 )
+z_index = 1
+PlayerPath = NodePath("../Player")
+
 [node name="World" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 PlayerPath = NodePath("../Player")
 
@@ -90,6 +104,23 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Button" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="MobObstacles" type="Node2D" parent="."]
+
+[node name="SpiderWall" type="StaticBody2D" parent="MobObstacles"]
+position = Vector2( 714.911, 211.874 )
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="Obstacle" type="CollisionShape2D" parent="MobObstacles/SpiderWall"]
+position = Vector2( -223.698, -0.321869 )
+shape = SubResource( 1 )
+
+[node name="Obstacle2" type="CollisionShape2D" parent="MobObstacles/SpiderWall"]
+position = Vector2( 171.431, -1.8392 )
+shape = SubResource( 1 )
+
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]

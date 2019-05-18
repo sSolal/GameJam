@@ -51,4 +51,12 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [node name="Button" parent="." instance=ExtResource( 5 )]
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 114.799
+margin_top = 361.139
+margin_right = 138.799
+margin_bottom = 385.139
+
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="EnableFullscreen"]

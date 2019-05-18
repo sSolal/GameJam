@@ -29,7 +29,7 @@ func _ready():
 #	pass
 func _process(delta):
 	if Input.is_key_pressed(KEY_W):
-		if not switching:
+		if not switching and not player.diving:
 			switching = true
 			aim = 1-currentMeta
 			var pos = $Meta0.world_to_map(player.position)
@@ -91,8 +91,7 @@ func chunk(r):
 		get_child(currentMeta).set_cell(x,y,-1)
 		get_child(aim).set_cell(x,y,tile)"""
 func switch(aim):
-	if not player.diving:
-		emit_signal("metamorphose")
+	emit_signal("metamorphose")
 	for r in range(0,r_max):
 		chunk(r)
 		yield(get_tree().create_timer(0.2), "timeout")
