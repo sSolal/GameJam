@@ -39,17 +39,20 @@ __meta__ = {
 position = Vector2( 491.756, 193.517 )
 z_index = 1
 
-[node name="tuto1" type="Sprite" parent="."]
-position = Vector2( 498.386, 461.683 )
-scale = Vector2( 0.495174, 0.495174 )
-texture = ExtResource( 4 )
-
-[node name="tuto2" type="Sprite" parent="."]
-position = Vector2( 374.32, 501.1 )
-scale = Vector2( 0.50527, 0.50527 )
-texture = ExtResource( 5 )
-
-[node name="tuto3" type="Sprite" parent="."]
+[node name="Tutos" type="Node2D" parent="."]
 position = Vector2( 630.206, 471.375 )
 scale = Vector2( 0.525463, 0.525463 )
+
+[node name="tuto1" type="Sprite" parent="Tutos"]
+position = Vector2( -250.865, -18.4447 )
+scale = Vector2( 0.942358, 0.942358 )
+texture = ExtResource( 4 )
+
+[node name="tuto2" type="Sprite" parent="Tutos"]
+position = Vector2( -486.972, 56.5692 )
+scale = Vector2( 0.961571, 0.961571 )
+texture = ExtResource( 5 )
+
+[node name="tuto3" type="Sprite" parent="Tutos"]
 texture = ExtResource( 6 )
+
