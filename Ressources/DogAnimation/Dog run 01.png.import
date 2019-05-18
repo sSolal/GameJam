@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dog run 05.png-1dae26b92d0dc2a13a8c524f67701af4.stex"
+path="res://.import/Dog run 01.png-b8a46a23436407efb456dde4c0acc97f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dog run 05.png"
-dest_files=[ "res://.import/Dog run 05.png-1dae26b92d0dc2a13a8c524f67701af4.stex" ]
+source_file="res://Ressources/DogAnimation/Dog run 01.png"
+dest_files=[ "res://.import/Dog run 01.png-b8a46a23436407efb456dde4c0acc97f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
