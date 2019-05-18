@@ -14,10 +14,12 @@ var run = false
 
 var anim
 var current_anim = "idle"
+var was_on_floor = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	anim = $AnimationTree.get("parameters/playback")
 	anim.start("idle")
+	$AnimationTree.active = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity.y+=981*delta
@@ -61,7 +63,9 @@ func _process(delta):
 			#anim.travel("idle")
 			velocity.x = velocity.x/run_speed
 	if Input.is_action_just_pressed("ui_up"):
+		
 		if is_on_floor():
+			$Jump.play()
 			velocity.y=-jumpForce
 			#anim.travel("Jump")
 		elif is_on_wall():
@@ -72,11 +76,15 @@ func _process(delta):
 	if is_on_floor():
 		if abs(velocity.x)<25:
 			anim.travel("idle")
+		if not was_on_floor:
+			$Land.play()
+			was_on_floor = true
 	else:
+		was_on_floor = false
 		if velocity.y>12:
 			anim.travel("Fall")
 		
-	if is_on_floor() or Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
+	if flag == true and is_on_floor() or Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
 		flag = false
 	if run == true:
 		run = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/light.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Idle animation/Idle 04.png" type="Texture" id=6]
 [ext_resource path="res://Ressources/run1.png" type="Texture" id=7]
 [ext_resource path="res://Ressources/spritesheet.png" type="Texture" id=8]
+[ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Ressources/Sounds/BounceYoFrankie.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,12 +25,28 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 10.3376
-height = 20.9135
+radius = 9.52248
+height = 28.2856
+
+[sub_resource type="Animation" id=20]
+resource_name = "Dash"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fall"
-length = 0.5
+length = 0.3
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -37,10 +55,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25 ),
+"times": PoolRealArray( 0, 0.15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 1 ]
+"values": [ 1, 0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -95,6 +113,9 @@ tracks/0/keys = {
 "values": [ 2, 4, 5, 6 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Dash"
+
 [sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Fall"
 
@@ -110,29 +131,37 @@ animation = "idle"
 [sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=18]
+states/Dash/node = SubResource( 21 )
+states/Dash/position = Vector2( 24, 158 )
 states/Fall/node = SubResource( 7 )
 states/Fall/position = Vector2( 458, 170 )
 states/Jump/node = SubResource( 8 )
 states/Jump/position = Vector2( 303, 95 )
 states/Run/node = SubResource( 9 )
-states/Run/position = Vector2( 144, 180 )
+states/Run/position = Vector2( 138, 223 )
 states/idle/node = SubResource( 10 )
 states/idle/position = Vector2( 144, 95 )
-transitions = [ "idle", "Jump", SubResource( 11 ), "Jump", "Fall", SubResource( 12 ), "Run", "Jump", SubResource( 13 ), "idle", "Run", SubResource( 14 ), "Run", "idle", SubResource( 15 ), "Fall", "Run", SubResource( 16 ), "Fall", "idle", SubResource( 17 ) ]
+transitions = [ "idle", "Jump", SubResource( 11 ), "Jump", "Fall", SubResource( 12 ), "Run", "Jump", SubResource( 13 ), "Fall", "Run", SubResource( 16 ), "Fall", "idle", SubResource( 17 ), "idle", "Dash", SubResource( 22 ), "Dash", "Run", SubResource( 23 ), "Run", "Dash", SubResource( 24 ), "Dash", "idle", SubResource( 25 ) ]
+graph_offset = Vector2( -233, 67 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
@@ -153,10 +182,10 @@ frame = 3
 
 [node name="Body" type="Sprite" parent="."]
 light_mask = 0
+position = Vector2( 0.35849, -3.94334 )
 texture = ExtResource( 8 )
 vframes = 3
 hframes = 4
-frame = 5
 region_rect = Rect2( 5, 5, 64, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -164,6 +193,7 @@ position = Vector2( 0.569572, 0.234953 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dash = SubResource( 20 )
 anims/Fall = SubResource( 3 )
 anims/Jump = SubResource( 4 )
 anims/Run = SubResource( 5 )
@@ -172,6 +202,11 @@ anims/idle = SubResource( 6 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 18 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 19 )
+
+[node name="Land" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
 
