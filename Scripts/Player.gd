@@ -109,4 +109,4 @@ func v_to_anim():
 		
 func die(msg):
 	print("Died")
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://Scenes/Main.tscn")
