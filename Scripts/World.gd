@@ -91,7 +91,8 @@ func chunk(r):
 		get_child(currentMeta).set_cell(x,y,-1)
 		get_child(aim).set_cell(x,y,tile)"""
 func switch(aim):
-	emit_signal("metamorphose")
+	if not player.diving:
+		emit_signal("metamorphose")
 	for r in range(0,r_max):
 		chunk(r)
 		yield(get_tree().create_timer(0.2), "timeout")
