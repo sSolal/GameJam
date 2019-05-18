@@ -212,6 +212,7 @@ stream = ExtResource( 9 )
 stream = ExtResource( 10 )
 
 [node name="Metamorphose_moche" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 11 )
 script = ExtResource( 12 )

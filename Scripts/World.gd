@@ -12,7 +12,7 @@ var y_max = 0
 
 var x = 0
 var y = 0
-var r_max = 25
+var r_max = 35
 
 var currentMeta = 0
 var aim = 0
@@ -35,6 +35,7 @@ func _process(delta):
 			var pos = $Meta0.world_to_map(player.position)
 			x=pos.x
 			y=pos.y
+			var tile = get_child(2+currentMeta).get_cell(x,y+1)
 			switch(aim)
 			
 func chunk(r):
@@ -51,6 +52,14 @@ func chunk(r):
 		tile = get_child(currentMeta).get_cell(o,yp)
 		get_child(currentMeta).set_cell(o,yp,-1)
 		get_child(aim).set_cell(o,yp,tile)
+		
+		tile = get_child(2+currentMeta).get_cell(o,yn)
+		get_child(2+currentMeta).set_cell(o,yn,-1)
+		get_child(2+aim).set_cell(o,yn,tile)
+		
+		tile = get_child(2+currentMeta).get_cell(o,yp)
+		get_child(2+currentMeta).set_cell(o,yp,-1)
+		get_child(2+aim).set_cell(o,yp,tile)
 	for o in range(yn,yp+1):
 		tile = get_child(currentMeta).get_cell(xn,o)
 		get_child(currentMeta).set_cell(xn,o,-1)
@@ -59,6 +68,15 @@ func chunk(r):
 		tile = get_child(currentMeta).get_cell(xp,o)
 		get_child(currentMeta).set_cell(xp,o,-1)
 		get_child(aim).set_cell(xp,o,tile)
+		
+		tile = get_child(2+currentMeta).get_cell(xn,o)
+		get_child(2+currentMeta).set_cell(xn,o,-1)
+		get_child(2+aim).set_cell(xn,o,tile)
+		
+		tile = get_child(2+currentMeta).get_cell(xp,o)
+		get_child(2+currentMeta).set_cell(xp,o,-1)
+		get_child(2+aim).set_cell(xp,o,tile)
+		
 	r+=1
 """	
 	for o in range(10):
@@ -73,7 +91,7 @@ func chunk(r):
 		get_child(aim).set_cell(x,y,tile)"""
 func switch(aim):
 	emit_signal("metamorphose")
-	for r in range(r_max):
+	for r in range(1,r_max):
 		chunk(r)
 		yield(get_tree().create_timer(0.2), "timeout")
 	switching = false

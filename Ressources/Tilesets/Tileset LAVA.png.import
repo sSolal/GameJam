@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tileset LAVA.png-5489a086c9b34aaf3a6a852fa1fb2504.stex"
+path="res://.import/Tileset LAVA.png-0525c6080301108a08e797e7dff304f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tileset LAVA.png"
-dest_files=[ "res://.import/Tileset LAVA.png-5489a086c9b34aaf3a6a852fa1fb2504.stex" ]
+source_file="res://Ressources/Tilesets/Tileset LAVA.png"
+dest_files=[ "res://.import/Tileset LAVA.png-0525c6080301108a08e797e7dff304f0.stex" ]
 
 [params]
 
