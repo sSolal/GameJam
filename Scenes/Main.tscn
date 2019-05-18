@@ -106,12 +106,11 @@ position = Vector2( 348.66, 153.715 )
 z_index = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Button" parent="CanvasLayer" instance=ExtResource( 7 )]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 255.271, 255.743 )
+position = Vector2( 188.613, 53.0471 )
 texture = ExtResource( 8 )
 
 [node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]

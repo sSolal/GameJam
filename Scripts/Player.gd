@@ -4,6 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 export (NodePath) var TextureProgressPath
+var world
 var BarLife
 var velocity = Vector2(0,0)
 var gravity = 981*2
@@ -18,6 +19,7 @@ var swimForce = 200
 var anim
 var current_anim = "idle"
 var was_on_floor = true
+var invin = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	BarLife = get_node(TextureProgressPath)
@@ -82,6 +84,11 @@ func _process(delta):
 		if not diving :
 			diving = true
 			$Water.play()
+			if world.currentMeta == 0:
+				print("HEYBRO")
+				for h in range(1,21):
+					yield(get_tree().create_timer(0.3),"timeout")
+					BarLife.value += -5
 		
 	else:
 		diving = false
@@ -123,13 +130,19 @@ func die(msg):
 	get_tree().reload_current_scene()
 	
 func hitright():
-	position.x += 8
-	for h in range(1,21):
-		yield(get_tree().create_timer(0.3),"timeout")
-		BarLife.value += -1
+	if invin == false:
+		invin = true
+		position.x += 8
+		for h in range(1,21):
+			yield(get_tree().create_timer(0.3),"timeout")
+			BarLife.value += -1
+		invin = false
 func hitleft():
-	position.x += -8
-	for h in range(1,21):
-		yield(get_tree().create_timer(0.3),"timeout")
-		BarLife.value += -1
+	if invin == false:
+		invin = true
+		position.x += -8
+		for h in range(1,21):
+			yield(get_tree().create_timer(0.3),"timeout")
+			BarLife.value += -1
+		invin = false
 		
