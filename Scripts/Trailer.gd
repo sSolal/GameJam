@@ -7,6 +7,12 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimationPlayer.play("CameraTrailer")
+	
+	var ratiox = get_viewport_rect().size.x/1024
+	var ratioy = get_viewport_rect().size.y/600
+	var ratio = 1/max(ratiox,ratioy)
+	print(ratio)
+	$Camera2D.zoom = Vector2(1,1)*ratio
 
 
 

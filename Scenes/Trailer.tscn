@@ -9,7 +9,7 @@
 resource_name = "CameraTrailer"
 length = 15.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("Camera2D/Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -18,10 +18,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 15 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 499, 300 ), Vector2( 530, 300 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 30, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:scale")
+tracks/1/path = NodePath("Camera2D/Sprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,23 +39,27 @@ script = ExtResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/CameraTrailer = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 530, 300 )
-scale = Vector2( 0.6, 0.6 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 546.616, 298.536 )
+current = true
+
+[node name="Sprite" type="Sprite" parent="Camera2D"]
+position = Vector2( 21.4, 0 )
+scale = Vector2( 0.587477, 0.587477 )
 texture = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
 modulate = Color( 1, 1, 1, 0.427451 )
-margin_left = 40.0
-margin_top = 366.0
-margin_right = 993.0
-margin_bottom = 590.0
+margin_left = -506.616
+margin_top = 67.4636
+margin_right = 446.384
+margin_bottom = 291.464
 
-[node name="Label" type="Label" parent="."]
-margin_left = -36.0
-margin_top = 321.0
-margin_right = 1060.0
-margin_bottom = 645.0
+[node name="Label" type="Label" parent="Camera2D"]
+margin_left = -582.616
+margin_top = 22.4636
+margin_right = 513.384
+margin_bottom = 346.464
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Dans un futur lointain, en orbite autour de Butters, un
@@ -66,21 +70,22 @@ environemment."
 align = 1
 valign = 1
 
-[node name="Button" type="Button" parent="."]
-margin_left = 877.648
-margin_top = 522.901
-margin_right = 989.648
-margin_bottom = 588.901
+[node name="Button" type="Button" parent="Camera2D"]
+margin_left = 331.032
+margin_top = 224.365
+margin_right = 443.032
+margin_bottom = 290.365
 flat = true
 script = ExtResource( 4 )
 
-[node name="Label2" type="Label" parent="Button"]
-margin_left = 21.3275
-margin_top = 16.0732
-margin_right = 131.328
-margin_bottom = 77.0732
+[node name="Label2" type="Label" parent="Camera2D"]
+margin_left = 352.36
+margin_top = 240.438
+margin_right = 462.36
+margin_bottom = 301.438
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SKIP"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_Button_pressed"]
