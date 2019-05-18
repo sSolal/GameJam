@@ -12,7 +12,8 @@
 [ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=10]
 [ext_resource path="res://Ressources/Sounds/BounceYoFrankie.wav" type="AudioStream" id=11]
 [ext_resource path="res://Ressources/Metamorphose_moche.png" type="Texture" id=12]
-[ext_resource path="res://Scenes/Metamorphose_moche.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Metamorphose_moche.gd" type="Script" id=13]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

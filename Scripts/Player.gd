@@ -3,6 +3,8 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+export (NodePath) var TextureProgressPath
+var BarLife
 var velocity = Vector2(0,0)
 var gravity = 981*2
 var speed = 100#85
@@ -13,12 +15,12 @@ var flag = false
 var run = false
 var diving = false
 var swimForce = 200
-
 var anim
 var current_anim = "idle"
 var was_on_floor = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	BarLife = get_node(TextureProgressPath)
 	anim = $AnimationTree.get("parameters/playback")
 	anim.start("idle")
 	$AnimationTree.active = true
@@ -28,7 +30,6 @@ func _process(delta):
 	velocity = move_and_slide(velocity,Vector2(0,-1))
 	velocity.x = velocity.x*0.95
 	$Body.flip_h = velocity.x<0
-	
 	
 	"""if abs(velocity.x)<25:
 		if $Body.animation!="idle":
@@ -120,3 +121,15 @@ func metamorphose():
 func die(msg):
 	print("Died")
 	get_tree().reload_current_scene()
+	
+func hitright():
+	position.x += 8
+	for h in range(1,21):
+		yield(get_tree().create_timer(0.3),"timeout")
+		BarLife.value += -1
+func hitleft():
+	position.x += -8
+	for h in range(1,21):
+		yield(get_tree().create_timer(0.3),"timeout")
+		BarLife.value += -1
+		

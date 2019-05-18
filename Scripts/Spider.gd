@@ -29,6 +29,12 @@ func _process(delta):
 			var collision = get_slide_collision(i)
 			if collision.collider.name == "Player" or collision.collider.name=="SpiderWall" or "Spider" in collision.collider.name:
 				flag = true
+			if collision.collider.name == "Player":
+				if player.position.x - position.x >0:
+					player.hitright()
+				if player.position.x - position.x <0:
+					player.hitleft()
+				
 	"""if abs(velocity.x)<speed and not flag:
 		jump = true"""
 	if flag and $AnimatedSprite.is_playing():
