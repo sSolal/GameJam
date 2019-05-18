@@ -1,0 +1,120 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
+[ext_resource path="res://Ressources/UI/tuto1.png" type="Texture" id=2]
+[ext_resource path="res://Ressources/UI/tuto2.png" type="Texture" id=3]
+[ext_resource path="res://Ressources/UI/tuto3.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=5]
+[ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=6]
+[ext_resource path="res://Ressources/Tilesets/TileSet1.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -20, -12, -12, -20, 20, -20, 20, 12, 20, 12, 16, 20, 12, 20, -20, 20 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( -20, -16, 16, -16, 16, 20, -20, 20 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( -20, -16, 16, -16, 16, 20, -20, 20 )
+
+[sub_resource type="TileSet" id=8]
+0/name = "Sprite"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 40, 40 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 20, 20 )
+0/occluder = SubResource( 5 )
+0/navigation_offset = Vector2( 20, 20 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 20, 20 )
+} ]
+0/z_index = 0
+1/name = "Sprite2"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 48, 0, 40, 40 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 20, 20 )
+1/occluder = SubResource( 5 )
+1/navigation_offset = Vector2( 20, 20 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 20, 20 )
+} ]
+1/z_index = 0
+
+[node name="Node" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 506.672, 302.186 )
+current = true
+zoom = Vector2( 0.4, 0.4 )
+smoothing_enabled = true
+script = ExtResource( 1 )
+PlayerPath = NodePath("../Player")
+
+[node name="Background" type="ColorRect" parent="Camera2D"]
+margin_left = -503.952
+margin_top = -299.067
+margin_right = 520.048
+margin_bottom = 300.933
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="Tutos" type="Node2D" parent="."]
+position = Vector2( 663.367, 462.331 )
+scale = Vector2( 0.525463, 0.525463 )
+
+[node name="tuto1" type="Sprite" parent="Tutos"]
+position = Vector2( -795.898, 15.9784 )
+scale = Vector2( 0.942358, 0.942358 )
+texture = ExtResource( 2 )
+
+[node name="tuto2" type="Sprite" parent="Tutos"]
+position = Vector2( -412.389, -40.963 )
+scale = Vector2( 0.961571, 0.961571 )
+texture = ExtResource( 3 )
+
+[node name="tuto3" type="Sprite" parent="Tutos"]
+position = Vector2( 728.622, -172.116 )
+texture = ExtResource( 4 )
+
+[node name="World" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Meta0" type="TileMap" parent="World"]
+mode = 2
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -1179647, 0, 0, -1179646, 0, 0, -1179645, 0, 0, -1179644, 0, 0, -1179643, 0, 0, -1179642, 0, 0, -1179641, 0, 0, -1179640, 0, 0, -1179639, 0, 0, -1179638, 0, 0, -1179637, 0, 0, -1179636, 0, 0, -1179635, 0, 0, -1179634, 0, 0, -1179633, 0, 0, -1179632, 0, 0, -1179631, 0, 0, -1179630, 0, 0, -1179629, 0, 0, -1179628, 0, 0, -1179627, 0, 0, -1179626, 0, 0, -1179625, 0, 0, -1179624, 0, 0, -1179623, 0, 0, -1179622, 0, 0, -1179621, 0, 0, -1179620, 0, 0, -1179619, 0, 0, -1179618, 0, 0, -1179617, 0, 0, -1179616, 0, 0, -1179615, 0, 0, -1179614, 0, 0, -1179613, 0, 0, -1179612, 0, 0, -1179611, 0, 0, -1179610, 0, 0, -1179609, 0, 0, -1179608, 0, 0, -1179607, 0, 0, -1179606, 0, 0, -1179605, 0, 0, -1179604, 0, 0, -1179603, 0, 0, -1179602, 0, 0, -1179601, 0, 0, -1179600, 0, 0, -1179599, 0, 0, -1179598, 0, 0, -1114111, 1, 0, -1114098, 1, 0, -1114097, 1, 0, -1114096, 1, 0, -1114095, 1, 0, -1114094, 1, 0, -1114093, 1, 0, -1114092, 1, 0, -1114088, 1, 0, -1114087, 1, 0, -1114086, 1, 0, -1114085, 1, 0, -1114084, 1, 0, -1114083, 1, 0, -1114082, 1, 0, -1114081, 1, 0, -1114080, 1, 0, -1114077, 1, 0, -1114076, 1, 0, -1114075, 1, 0, -1114074, 1, 0, -1114073, 1, 0, -1114072, 1, 0, -1114071, 1, 0, -1114062, 1, 0, -1048575, 1, 0, -1048561, 1, 0, -1048560, 1, 0, -1048550, 1, 0, -1048549, 1, 0, -1048548, 1, 0, -1048547, 1, 0, -1048546, 1, 0, -1048545, 1, 0, -1048544, 1, 0, -1048540, 1, 0, -1048539, 1, 0, -1048538, 1, 0, -1048537, 1, 0, -1048526, 1, 0, -983039, 1, 0, -983012, 1, 0, -983011, 1, 0, -983010, 1, 0, -983009, 1, 0, -983008, 1, 0, -983004, 1, 0, -983003, 1, 0, -982995, 0, 0, -982994, 0, 0, -982993, 0, 0, -982990, 1, 0, -917503, 1, 0, -917496, 0, 0, -917481, 0, 0, -917480, 0, 0, -917458, 1, 0, -917457, 1, 0, -917454, 1, 0, -851963, 0, 0, -851962, 0, 0, -851961, 0, 0, -851921, 1, 0, -851918, 1, 0, -786430, 0, 0, -786429, 0, 0, -786428, 0, 0, -786385, 1, 0, -786382, 1, 0, -720849, 1, 0, -720846, 1, 0, -655318, 1, 0, -655317, 1, 0, -655316, 1, 0, -655315, 1, 0, -655314, 1, 0, -655313, 1, 0, -655310, 1, 0, -589774, 1, 0, -524238, 1, 0, -458702, 1, 0, -393166, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Meta1" type="TileMap" parent="World"]
+z_index = 1
+mode = 2
+tile_set = SubResource( 8 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 90.2809, 508.653 )
+z_index = 1
+
