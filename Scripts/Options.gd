@@ -31,7 +31,7 @@ func _on_Effects_value_changed(volume):
 
 
 func _on_Music_value_changed(volume):
-	$Timer.start(0)
+	$Timer.start()
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), (volume/2-30))
 	if volume == 0:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),true)

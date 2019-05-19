@@ -30,3 +30,7 @@ func _on_Resume_pressed():
 func _on_Restart_pressed():
 	get_tree().paused=false
 	get_tree().change_scene("res://Scenes/Main.tscn")
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://Scenes/Menu.tscn")

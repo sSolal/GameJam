@@ -18,7 +18,7 @@ func _process(delta):
 	velocity.y+=981*delta
 	$AnimatedSprite.flip_h = position.x-player.position.x<0
 	velocity.x = speed*(int($AnimatedSprite.flip_h)-0.5)*2
-	"""if jump : 
+	"""if jump :
 		velocity.y = -jumpForce
 		jump = false"""
 	velocity = move_and_slide(velocity, Vector2(0,-1))
@@ -40,6 +40,3 @@ func _process(delta):
 		$AnimatedSprite.stop()
 	if not flag and not $AnimatedSprite.is_playing():
 		$AnimatedSprite.play()
-	
-	
-		
