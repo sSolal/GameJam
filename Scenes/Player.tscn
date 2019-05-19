@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Character/light.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Idle animation/Idle 03.png" type="Texture" id=5]
 [ext_resource path="res://Idle animation/Idle 04.png" type="Texture" id=6]
 [ext_resource path="res://Ressources/Character/run1.png" type="Texture" id=7]
-[ext_resource path="res://Ressources/Character/spritesheet.png" type="Texture" id=8]
+[ext_resource path="res://Ressources/Character/characterSpriteSheet.png" type="Texture" id=8]
 [ext_resource path="res://Ressources/Sounds/Water.wav" type="AudioStream" id=9]
 [ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=10]
 [ext_resource path="res://Ressources/Sounds/BounceYoFrankie.wav" type="AudioStream" id=11]
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 8 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -65,6 +65,21 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
+[sub_resource type="Animation" id=25]
+resource_name = "Hit"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17 ]
+}
+
 [sub_resource type="Animation" id=6]
 length = 0.5
 step = 0.05
@@ -78,7 +93,23 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 8, 9 ]
+"values": [ 10, 11 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "Remote"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00591296, 0.4, 0.8, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 9, 14, 19, 4 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -111,7 +142,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2, 4, 5, 6 ]
+"values": [ 2, 5, 6, 7 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=9]
@@ -120,8 +151,14 @@ animation = "Dash"
 [sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Fall"
 
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Hit"
+
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Remote"
 
 [sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Run"
@@ -141,13 +178,28 @@ animation = "idle"
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
+priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
 switch_mode = 2
+priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
+priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=23]
@@ -155,14 +207,18 @@ states/Dash/node = SubResource( 9 )
 states/Dash/position = Vector2( 24, 158 )
 states/Fall/node = SubResource( 10 )
 states/Fall/position = Vector2( 458, 170 )
+states/Hit/node = SubResource( 27 )
+states/Hit/position = Vector2( 358, 331 )
 states/Jump/node = SubResource( 11 )
 states/Jump/position = Vector2( 303, 95 )
+states/Remote/node = SubResource( 28 )
+states/Remote/position = Vector2( 125, 331 )
 states/Run/node = SubResource( 12 )
-states/Run/position = Vector2( 138, 223 )
+states/Run/position = Vector2( -11, 258 )
 states/idle/node = SubResource( 13 )
 states/idle/position = Vector2( 144, 95 )
-transitions = [ "idle", "Jump", SubResource( 14 ), "Jump", "Fall", SubResource( 15 ), "Run", "Jump", SubResource( 16 ), "Fall", "Run", SubResource( 17 ), "Fall", "idle", SubResource( 18 ), "idle", "Dash", SubResource( 19 ), "Dash", "Run", SubResource( 20 ), "Run", "Dash", SubResource( 21 ), "Dash", "idle", SubResource( 22 ) ]
-graph_offset = Vector2( -233, 67 )
+transitions = [ "idle", "Jump", SubResource( 14 ), "Jump", "Fall", SubResource( 15 ), "Run", "Jump", SubResource( 16 ), "Fall", "Run", SubResource( 17 ), "Fall", "idle", SubResource( 18 ), "idle", "Dash", SubResource( 19 ), "Dash", "Run", SubResource( 20 ), "Run", "Dash", SubResource( 21 ), "Dash", "idle", SubResource( 22 ), "idle", "Remote", SubResource( 33 ), "Remote", "idle", SubResource( 34 ), "idle", "Hit", SubResource( 35 ), "Hit", "idle", SubResource( 36 ) ]
+graph_offset = Vector2( -209.182, 147 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=24]
 
@@ -187,8 +243,8 @@ frame = 3
 light_mask = 0
 position = Vector2( 0.35849, -3.94334 )
 texture = ExtResource( 8 )
-vframes = 3
-hframes = 4
+vframes = 4
+hframes = 5
 region_rect = Rect2( 5, 5, 64, 64 )
 
 [node name="Detect" type="Area2D" parent="."]
@@ -206,7 +262,9 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Dash = SubResource( 4 )
 anims/Fall = SubResource( 5 )
+anims/Hit = SubResource( 25 )
 anims/Jump = SubResource( 6 )
+anims/Remote = SubResource( 26 )
 anims/Run = SubResource( 7 )
 anims/idle = SubResource( 8 )
 
@@ -233,3 +291,4 @@ scale = Vector2( 0.1, 0.1 )
 z_index = 5
 texture = ExtResource( 12 )
 script = ExtResource( 13 )
+

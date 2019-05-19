@@ -4,7 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var velocity = Vector2(0,0)
-var speed = 75
+var speed = 165
 #var jumpForce = 200
 var player
 var jump = false
@@ -31,9 +31,9 @@ func _process(delta):
 				flag = true
 			if collision.collider.name == "Player":
 				if player.position.x - position.x >0:
-					player.hit(1,1,16)
+					player.hit(1,2,50)
 				if player.position.x - position.x <0:
-					player.hit(-1,1,16)
+					player.hit(-1,2,50)
 	"""if abs(velocity.x)<speed and not flag:
 		jump = true"""
 	if flag and $AnimatedSprite.is_playing():

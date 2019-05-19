@@ -122,6 +122,7 @@ func v_to_anim():
 			return "Jump"
 		
 func metamorphose():
+	anim.travel("Remote")
 	$Metamorphose_moche.scale=Vector2(0.1,0.1)
 	$Metamorphose_moche.visible = true
 func die(msg):
@@ -129,6 +130,7 @@ func die(msg):
 	get_tree().reload_current_scene()
 	
 func hit(side, damage = 1, knockback = 8):
+	anim.travel("Hit")
 	if invin == false:
 		invin = true
 		position.x += 8*side
