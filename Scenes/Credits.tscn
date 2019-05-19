@@ -1,10 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Ressources/Crédits.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Crédits.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Crédits.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=3]
-
-
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 0, -1.6702 )
@@ -20,9 +18,9 @@ position = Vector2( 15.0316, 606.276 )
 
 [node name="Label" type="Label" parent="Node2D"]
 margin_left = 353.698
-margin_top = 9.82053
+margin_top = 17.223
 margin_right = 993.698
-margin_bottom = 822.821
+margin_bottom = 830.223
 custom_fonts/font = ExtResource( 3 )
 text = "Contributeurs :
 
@@ -56,6 +54,8 @@ Supernova de Ronan Dec
 Source: http://www.taktalsmittel.com
 Licence: http://creativecommons.org
 /licenses/by-nd/2.0/de/
+(Monde d'eau)
 
 "
 align = 1
+

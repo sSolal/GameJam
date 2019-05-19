@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Win.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Coupe.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Fonts/PixelFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Ressources/Fonts/Font.tres" type="DynamicFont" id=4]
@@ -78,5 +78,5 @@ margin_bottom = 378.343
 rect_scale = Vector2( 1.7, 1.7 )
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-[connection signal="pressed" from="Restart" to="." method="_on_Button_pressed"]
+
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
