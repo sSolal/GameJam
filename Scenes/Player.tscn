@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=6]
 resource_name = "Hit"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body:frame")
@@ -80,7 +80,7 @@ tracks/0/keys = {
 "values": [ 15, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.5
 step = 0.05
 tracks/0/type = "value"
@@ -96,7 +96,7 @@ tracks/0/keys = {
 "values": [ 10, 11 ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=8]
 resource_name = "Remote"
 length = 2.0
 tracks/0/type = "value"
@@ -112,7 +112,7 @@ tracks/0/keys = {
 "values": [ 4, 9, 14, 19, 4 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 length = 0.5
 loop = true
 step = 0.01
@@ -129,7 +129,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -145,82 +145,82 @@ tracks/0/keys = {
 "values": [ 2, 5, 6, 7 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Dash"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Fall"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Hit"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "Jump"
 
-[sub_resource type="AnimationNodeAnimation" id=28]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Remote"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Run"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
-priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
-switch_mode = 2
-priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
-priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
 priority = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+priority = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=23]
-states/Dash/node = SubResource( 9 )
+[sub_resource type="AnimationNodeStateMachine" id=31]
+states/Dash/node = SubResource( 11 )
 states/Dash/position = Vector2( 24, 158 )
-states/Fall/node = SubResource( 10 )
+states/Fall/node = SubResource( 12 )
 states/Fall/position = Vector2( 458, 170 )
-states/Hit/node = SubResource( 27 )
+states/Hit/node = SubResource( 13 )
 states/Hit/position = Vector2( 358, 331 )
-states/Jump/node = SubResource( 11 )
+states/Jump/node = SubResource( 14 )
 states/Jump/position = Vector2( 303, 95 )
-states/Remote/node = SubResource( 28 )
+states/Remote/node = SubResource( 15 )
 states/Remote/position = Vector2( 125, 331 )
-states/Run/node = SubResource( 12 )
+states/Run/node = SubResource( 16 )
 states/Run/position = Vector2( -11, 258 )
-states/idle/node = SubResource( 13 )
+states/idle/node = SubResource( 17 )
 states/idle/position = Vector2( 144, 95 )
-transitions = [ "idle", "Jump", SubResource( 14 ), "Jump", "Fall", SubResource( 15 ), "Run", "Jump", SubResource( 16 ), "Fall", "Run", SubResource( 17 ), "Fall", "idle", SubResource( 18 ), "idle", "Dash", SubResource( 19 ), "Dash", "Run", SubResource( 20 ), "Run", "Dash", SubResource( 21 ), "Dash", "idle", SubResource( 22 ), "idle", "Remote", SubResource( 33 ), "Remote", "idle", SubResource( 34 ), "idle", "Hit", SubResource( 35 ), "Hit", "idle", SubResource( 36 ) ]
+transitions = [ "idle", "Jump", SubResource( 18 ), "Jump", "Fall", SubResource( 19 ), "Run", "Jump", SubResource( 20 ), "Fall", "Run", SubResource( 21 ), "Fall", "idle", SubResource( 22 ), "idle", "Dash", SubResource( 23 ), "Dash", "Run", SubResource( 24 ), "Run", "Dash", SubResource( 25 ), "Dash", "idle", SubResource( 26 ), "idle", "Remote", SubResource( 27 ), "Remote", "idle", SubResource( 28 ), "idle", "Hit", SubResource( 29 ), "Hit", "idle", SubResource( 30 ) ]
 graph_offset = Vector2( -209.182, 147 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=32]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -262,16 +262,16 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Dash = SubResource( 4 )
 anims/Fall = SubResource( 5 )
-anims/Hit = SubResource( 25 )
-anims/Jump = SubResource( 6 )
-anims/Remote = SubResource( 26 )
-anims/Run = SubResource( 7 )
-anims/idle = SubResource( 8 )
+anims/Hit = SubResource( 6 )
+anims/Jump = SubResource( 7 )
+anims/Remote = SubResource( 8 )
+anims/Run = SubResource( 9 )
+anims/idle = SubResource( 10 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 23 )
+tree_root = SubResource( 31 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 24 )
+parameters/playback = SubResource( 32 )
 
 [node name="Water" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
