@@ -1,9 +1,0 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[sub_resource type="DynamicFontData" id=1]
-resource_local_to_scene = true
-font_path = "res://Ressources/Fonts/A Gentle Touch.ttf"
-
-[resource]
-size = 36
-font_data = SubResource( 1 )

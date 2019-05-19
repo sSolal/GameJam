@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Trailer.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Dessin principal du jeu.png" type="Texture" id=2]
-[ext_resource path="res://Ressources/Fonts/new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Ressources/Fonts/TrailerFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/skipbutton.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -44,7 +44,7 @@ position = Vector2( 546.616, 298.536 )
 current = true
 
 [node name="Sprite" type="Sprite" parent="Camera2D"]
-position = Vector2( 21.4, 0 )
+position = Vector2( 19.3495, -4.10107 )
 scale = Vector2( 0.587477, 0.587477 )
 texture = ExtResource( 2 )
 

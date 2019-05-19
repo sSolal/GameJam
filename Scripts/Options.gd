@@ -2,7 +2,6 @@ extends Node
 
 # Declare member variables here. Examples:
 # var a = 2
-# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,12 +25,20 @@ func _on_Effects_value_changed(volume):
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Effects"),true)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Effects"),false)
+	if $EffectsSound.playing == false:
+		$EffectsSound.play()
 
 
 
 func _on_Music_value_changed(volume):
+	$Timer.start(0)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), (volume/2-30))
 	if volume == 0:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),true)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),false)
+	if $MusicSound.playing == false:
+		$MusicSound.play()
+		
+func coupermusique():
+	$MusicSound.stop()
