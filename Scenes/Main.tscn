@@ -9,8 +9,8 @@
 [ext_resource path="res://Decor monde de lave volcan.png" type="Texture" id=7]
 [ext_resource path="res://Décor monde d'eau.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Ressources/Sounds/meta0.wav" type="AudioStream" id=10]
-[ext_resource path="res://Ressources/Sounds/meta1.wav" type="AudioStream" id=11]
+[ext_resource path="res://Ressources/Sounds/TAM033-Ronan_Dec-1-Supernova.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Ressources/Sounds/BrokeForFree-SummerSpliffs.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=13]
 [ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=14]
@@ -162,5 +162,4 @@ collision_mask = 16384
 [node name="Obstacle3" type="CollisionShape2D" parent="MobObstacles/MobWalls"]
 position = Vector2( -678.661, -30.7889 )
 shape = SubResource( 1 )
-
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]
