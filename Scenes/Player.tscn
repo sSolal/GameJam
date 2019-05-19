@@ -298,10 +298,9 @@ visible = false
 scale = Vector2( 0.1, 0.1 )
 z_index = 5
 frames = SubResource( 33 )
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 17 )
 
 [node name="CoinPick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
-

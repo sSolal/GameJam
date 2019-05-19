@@ -38,6 +38,7 @@ PlayerPath = NodePath("../Player")
 position = Vector2( 103.896, 474.885 )
 z_index = 1
 TextureProgressPath = NodePath("../CanvasLayer/TextureProgress")
+ScoreLabel = NodePath("../CanvasLayer/ScoreLabel")
 
 [node name="Panneaux" type="Node2D" parent="."]
 editor/display_folded = true
@@ -430,7 +431,6 @@ position = Vector2( 1515.09, -789.824 )
 gravity = 90.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 9 )
 mode = false
 
@@ -445,6 +445,14 @@ margin_right = 613.312
 margin_bottom = 534.855
 value = 100.0
 texture_progress = ExtResource( 19 )
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+margin_left = 789.485
+margin_top = 33.061
+margin_right = 1024.49
+margin_bottom = 84.061
+custom_fonts/font = ExtResource( 5 )
+text = "Score: 000"
 
 [node name="MobObstacles" type="Node2D" parent="."]
 editor/display_folded = true

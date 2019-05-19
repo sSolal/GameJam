@@ -4,6 +4,9 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 export (NodePath) var TextureProgressPath
+export (NodePath) var ScoreLabel
+var score
+var point = 0
 var world
 var BarLife
 var life=100
@@ -27,6 +30,7 @@ func _ready():
 	anim = $AnimationTree.get("parameters/playback")
 	anim.start("idle")
 	$AnimationTree.active = true
+	score = get_node(ScoreLabel)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity.y+=gravity*delta
@@ -132,6 +136,7 @@ func metamorphose():
 	$MetaCool.launchposition = position
 	$MetaCool.visible = true
 func die(msg):
+	global.score = point
 	anim.travel("Hit")
 	#print("Died")
 	yield(get_tree().create_timer(2),"timeout")
@@ -150,6 +155,9 @@ func hit(side, damage = 1, knockback = 8):
 		
 func coinPick():
 	$CoinPick.play()
+	point += 100
+	score.text = ("Score: "+ str(point))
+	
 func damage(d):
 	life-=d
 """
