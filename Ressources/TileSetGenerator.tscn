@@ -5,10 +5,10 @@
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -20, -12, -12, -20, 20, -20, 20, 12, 20, 12, 16, 16, 12, 20, -20, 20 )
 
-[sub_resource type="OccluderPolygon2D" id=15]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -20, -12, -12, -20, 4, -4, 20, 12, 20, 12, 16, 16, 12, 20, -20, 20 )
 
-[sub_resource type="OccluderPolygon2D" id=17]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( -4, 4, 4, -4, 20, -20, 20, 12, 20, 12, 16, 16, 12, 20, -20, 20 )
 
 [node name="Node2D" type="Node2D"]
@@ -185,7 +185,7 @@ region_enabled = true
 region_rect = Rect2( 96, 0, 40, 40 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite12"]
-occluder = SubResource( 15 )
+occluder = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite12"]
 
@@ -200,10 +200,25 @@ region_enabled = true
 region_rect = Rect2( 144, 0, 40, 40 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite13"]
-occluder = SubResource( 17 )
+occluder = SubResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite13"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite13/StaticBody2D"]
 polygon = PoolVector2Array( 0, 0, 16, -16, 16, 16, 12, 20, -20, 20 )
+
+[node name="Sprite14" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 120, 40 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 48, 40, 40 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite14"]
+occluder = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite14"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite14/StaticBody2D"]
+polygon = PoolVector2Array( -20, -16, 16, -16, 16, 20, -20, 20 )
 
