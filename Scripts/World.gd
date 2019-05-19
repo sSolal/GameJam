@@ -11,7 +11,7 @@ onready var dog_scene = preload("res://Scenes/Dog.tscn")
 var x = 0
 var y = 0
 var r_max = 60
-var visible_delay = 6
+var visible_delay = 8
 
 var currentMeta = 0
 var aim = 0

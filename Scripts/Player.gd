@@ -127,8 +127,9 @@ func v_to_anim():
 		
 func metamorphose():
 	anim.travel("Remote")
-	$Metamorphose_moche.scale=Vector2(0.1,0.1)
-	$Metamorphose_moche.visible = true
+	$MetaCool.scale=Vector2(1,1)
+	$MetaCool.launchposition = position
+	$MetaCool.visible = true
 func die(msg):
 	anim.travel("Hit")
 	print("Died")
