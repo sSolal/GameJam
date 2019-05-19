@@ -10,7 +10,7 @@ onready var dog_scene = preload("res://Scenes/Dog.tscn")
 
 var x = 0
 var y = 0
-var r_max = 60
+var r_max = 80
 var visible_delay = 10
 
 var currentMeta = 0
