@@ -1,10 +1,11 @@
-extends Sprite
+extends AnimatedSprite
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var metaphSpeed = 0.3
-var maxSize = 2
+var metaphSpeed = 2
+var maxSize = 15
+var launchposition
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,3 +16,4 @@ func _process(delta):
 		scale+=Vector2(1,1)*delta*metaphSpeed
 		if scale.x>maxSize:
 			visible = false
+		position = launchposition-get_parent().position
