@@ -7,7 +7,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "CameraTrailer"
-length = 15.0
+length = 23.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D/Sprite:position")
 tracks/0/interp = 1
@@ -15,7 +15,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 15 ),
+"times": PoolRealArray( 0, 23.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 30, 0 ) ]
@@ -27,7 +27,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 15 ),
+"times": PoolRealArray( 0, 23.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.556314, 0.556314 ), Vector2( 0.6, 0.6 ) ]
@@ -81,5 +81,6 @@ margin_bottom = 53.8484
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SKIP"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_Button_pressed"]
