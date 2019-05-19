@@ -1,51 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=3]
 [ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=4]
 [ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=5]
-[ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Ressources/Sounds/meta0.wav" type="AudioStream" id=7]
-[ext_resource path="res://Ressources/Sounds/meta1.wav" type="AudioStream" id=8]
-[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=10]
-[ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=11]
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends Node
-
-var popup 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-onready var MenuPause = preload(\"res://Scenes/MenuPause.tscn\")
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-func _process(delta):
-	if Input.is_action_just_pressed(\"ui_cancel\"):
-		if not get_tree().paused:
-			popup = MenuPause.instance()
-			add_child(popup)
-			get_tree().paused=true
-		
-			
-			
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-"
+[ext_resource path="res://Scripts/Resizer.gd" type="Script" id=6]
+[ext_resource path="res://Decor monde de lave volcan.png" type="Texture" id=7]
+[ext_resource path="res://Décor monde d'eau.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ressources/Sounds/TAM033-Ronan_Dec-1-Supernova.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Ressources/Sounds/BrokeForFree-SummerSpliffs.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=13]
+[ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 18 )
 
 [node name="Node" type="Node"]
-script = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-editor/display_folded = true
 position = Vector2( 506.672, 302.186 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
@@ -53,20 +28,12 @@ smoothing_enabled = true
 script = ExtResource( 1 )
 PlayerPath = NodePath("../Player")
 
-[node name="Background" type="ColorRect" parent="Camera2D"]
-margin_left = -502.952
-margin_top = -299.067
-margin_right = 521.048
-margin_bottom = 300.933
-color = Color( 0.137255, 0.137255, 0.137255, 1 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 103.896, 474.885 )
 z_index = 1
 TextureProgressPath = NodePath("../CanvasLayer/TextureProgress")
 
 [node name="World" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 3 )
 PlayerPath = NodePath("../Player")
 
@@ -121,35 +88,63 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
+script = ExtResource( 6 )
+
+[node name="LAVAworld" type="TextureRect" parent="World/ParallaxBackground"]
+show_behind_parent = true
+margin_left = -42.0492
+margin_top = -117.913
+margin_right = 4049.95
+margin_bottom = 2775.09
+rect_scale = Vector2( 0.27, 0.27 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 4
+
+[node name="WATERworld" type="TextureRect" parent="World/ParallaxBackground"]
+show_behind_parent = true
+margin_left = -33.9126
+margin_top = -113.558
+margin_right = 4058.09
+margin_bottom = 2779.44
+rect_scale = Vector2( 0.27, 0.27 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
 [node name="Mobs" type="Node2D" parent="World"]
 z_index = 2
 
-[node name="Spider" parent="World/Mobs" instance=ExtResource( 6 )]
+[node name="Spider" parent="World/Mobs" instance=ExtResource( 9 )]
 position = Vector2( 1216.59, 163.711 )
 z_index = 1
 
 [node name="Musics" type="Node2D" parent="World"]
 
 [node name="meta0" type="AudioStreamPlayer" parent="World/Musics"]
-stream = ExtResource( 7 )
+stream = ExtResource( 10 )
 autoplay = true
+bus = "Music"
 
 [node name="meta1" type="AudioStreamPlayer" parent="World/Musics"]
-stream = ExtResource( 8 )
+stream = ExtResource( 11 )
 autoplay = true
+bus = "Music"
 
 [node name="FadeOut" type="Tween" parent="World/Musics"]
 
 [node name="FadeIn" type="Tween" parent="World/Musics"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
+script = ExtResource( 6 )
+mode = false
 
-[node name="Button" parent="CanvasLayer" instance=ExtResource( 9 )]
+[node name="Button" parent="CanvasLayer" instance=ExtResource( 12 )]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 188.613, 53.0471 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 
 [node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
 margin_left = 113.312
@@ -157,7 +152,7 @@ margin_top = 34.855
 margin_right = 613.312
 margin_bottom = 534.855
 value = 100.0
-texture_progress = ExtResource( 11 )
+texture_progress = ExtResource( 14 )
 
 [node name="MobObstacles" type="Node2D" parent="."]
 
