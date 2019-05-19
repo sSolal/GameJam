@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,9 +6,11 @@
 [ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=4]
 [ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=8]
-[ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=9]
+[ext_resource path="res://Ressources/Sounds/meta0.wav" type="AudioStream" id=7]
+[ext_resource path="res://Ressources/Sounds/meta1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=10]
+[ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 18 )
@@ -105,13 +107,28 @@ z_index = 1
 position = Vector2( 348.66, 153.715 )
 z_index = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Musics" type="Node2D" parent="World"]
 
-[node name="Button" parent="CanvasLayer" instance=ExtResource( 7 )]
+[node name="meta0" type="AudioStreamPlayer" parent="World/Musics"]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="meta1" type="AudioStreamPlayer" parent="World/Musics"]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="FadeOut" type="Tween" parent="World/Musics"]
+
+[node name="FadeIn" type="Tween" parent="World/Musics"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Button" parent="CanvasLayer" instance=ExtResource( 9 )]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 188.613, 53.0471 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
 margin_left = 113.312
@@ -119,9 +136,10 @@ margin_top = 34.855
 margin_right = 613.312
 margin_bottom = 534.855
 value = 100.0
-texture_progress = ExtResource( 9 )
+texture_progress = ExtResource( 11 )
 
 [node name="MobObstacles" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="MobWalls" type="StaticBody2D" parent="MobObstacles"]
 position = Vector2( 714.911, 211.874 )

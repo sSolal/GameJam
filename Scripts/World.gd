@@ -10,7 +10,8 @@ onready var dog_scene = preload("res://Scenes/Dog.tscn")
 
 var x = 0
 var y = 0
-var r_max = 40
+var r_max = 60
+var visible_delay = 6
 
 var currentMeta = 0
 var aim = 0
@@ -20,12 +21,15 @@ var switching = false
 export (NodePath) var PlayerPath
 
 var player
+var startTime
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_node(PlayerPath)
 	player.world = self
 	for mob in $Mobs.get_children():
 			mob.player = player
+	$Musics.get_child(0).play()
+	startTime = OS.get_ticks_msec()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -94,9 +98,16 @@ func chunk(r):
 		get_child(aim).set_cell(x,y,tile)"""
 func switch(aim):
 	emit_signal("metamorphose")
+	$Musics/FadeOut.interpolate_property($Musics.get_child(currentMeta), "volume_db", 0, -80, 2, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0)
+	$Musics/FadeIn.interpolate_property($Musics.get_child(aim), "volume_db", -80, 0, 2, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	$Musics/FadeOut.start()
+	$Musics/FadeIn.start()
+	#$Musics.get_child(currentMeta).stop()
+	#$Musics.get_child(aim).play()
 	for r in range(0,r_max):
 		chunk(r)
-		yield(get_tree().create_timer(0.2), "timeout")
+		if r<visible_delay:
+			yield(get_tree().create_timer(0.2), "timeout")
 	if aim==1:
 		for mob in $Mobs.get_children():
 			var newdog = dog_scene.instance()
