@@ -30,6 +30,8 @@ func _ready():
 	player.world = self
 	for mob in $Mobs.get_children():
 			mob.player = player
+	for i in $Interactive.get_children():
+			i.player = player
 	$Musics.get_child(0).play()
 	startTime = OS.get_ticks_msec()
 # Called every frame. 'delta' is the elapsed time since the previous frame.

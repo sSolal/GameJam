@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mini décor méga caillou.png-a319409ef5a6d1dd3033dca5c813d50d.stex"
+path="res://.import/Mini décor méga caillou.png-ce90bef377bf5ba620a132513be01700.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mini décor méga caillou.png"
-dest_files=[ "res://.import/Mini décor méga caillou.png-a319409ef5a6d1dd3033dca5c813d50d.stex" ]
+source_file="res://Ressources/Decors/Mini décor méga caillou.png"
+dest_files=[ "res://.import/Mini décor méga caillou.png-ce90bef377bf5ba620a132513be01700.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

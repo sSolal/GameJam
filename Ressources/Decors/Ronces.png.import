@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ronces.png-3971da0193fb4dd6c24b577a26207462.stex"
+path="res://.import/Ronces.png-7684044ac1817284786aa5c8572faf56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ronces.png"
-dest_files=[ "res://.import/Ronces.png-3971da0193fb4dd6c24b577a26207462.stex" ]
+source_file="res://Ressources/Decors/Ronces.png"
+dest_files=[ "res://.import/Ronces.png-7684044ac1817284786aa5c8572faf56.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
