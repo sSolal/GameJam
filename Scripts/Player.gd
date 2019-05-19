@@ -89,7 +89,6 @@ func _process(delta):
 				for h in range(1,21):
 					yield(get_tree().create_timer(0.3),"timeout")
 					BarLife.value += -5
-		
 	else:
 		diving = false
 	if is_on_floor():
