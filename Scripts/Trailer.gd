@@ -4,9 +4,10 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var text = """Dans un futur lointain, en orbite autour de Butters, 
-un Butterlarva qui n'arrivait pas à se métamorphoser en Butterfly reçoit l'aide du ButterBoss.
- Il lui confie un objet d'une puissance phénoménale
- lui permettant de métamorphoser intégralement son environemment."""
+un Butterlarva qui n'arrivait pas à se métamorphoser en Butterfly
+reçoit l'aide du ButterBoss. Il lui confie un objet d'une puissance
+phénoménale lui permettant de métamorphoser
+intégralement son environemment."""
 #var texts = ["Dans un futur lointain, alors que l'espèce humaine s'est éteinte, et que la terre a été abandonnée...",
 #"""Un jeune Butterlarva désespéré ne parvenient pas à se métamorphoser en Butterfly.
 #Loin de se laisser abattre, il se met en quête,
@@ -32,7 +33,7 @@ func _ready():
 	$Camera2D.zoom = Vector2(1,1)*ratio
 
 func _process(delta):
-	if letter<266:
+	if letter<264:
 		e+=delta
 		if e>spl:
 			e = 0
