@@ -23,3 +23,7 @@ func _on_Option_pressed():
 
 func _on_Train_pressed():
 	get_tree().change_scene("res://Scenes/Tuto.tscn")
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Scenes/Crédits.tscn")
