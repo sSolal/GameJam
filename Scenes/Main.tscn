@@ -49,7 +49,7 @@ script = ExtResource( 2 )
 PlayerPath = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 579.512, -1975.17 )
+position = Vector2( 127.128, 477.293 )
 z_index = 1
 TextureProgressPath = NodePath("../CanvasLayer/TextureProgress")
 ScoreLabel = NodePath("../CanvasLayer/ScoreLabel")
@@ -801,7 +801,7 @@ position = Vector2( 1202.78, -2113.2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
 frames = SubResource( 2 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
