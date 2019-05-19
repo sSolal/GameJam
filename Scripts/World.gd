@@ -24,6 +24,8 @@ var player
 var startTime
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$ParallaxBackground/LAVAworld.show()
+	$ParallaxBackground/WATERworld.hide()
 	player = get_node(PlayerPath)
 	player.world = self
 	for mob in $Mobs.get_children():
@@ -122,6 +124,12 @@ func switch(aim):
 			newspid.player = player
 			$Mobs.remove_child(mob)
 			$Mobs.add_child(newspid)
+	if currentMeta == 0:
+		$ParallaxBackground/LAVAworld.hide()
+		$ParallaxBackground/WATERworld.show()
+	elif currentMeta == 1:
+		$ParallaxBackground/WATERworld.hide()
+		$ParallaxBackground/LAVAworld.show()
 	switching = false
 	currentMeta = aim
 	

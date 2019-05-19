@@ -7,7 +7,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 1)
-	$VSlider.value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))*3+30
+	$VSlider.value = (AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))+30)*2
 	print(AudioServer.get_bus_volume_db(1))
 	$CheckBox.pressed = OS.window_fullscreen
 
@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func _on_VSlider_value_changed(volume):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), (volume/3-30))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), (volume/2-30))
 	if volume == 0:
 		AudioServer.set_bus_mute(0,true)
 	else:
