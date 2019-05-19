@@ -21,3 +21,4 @@ func _process(delta):
 	position = player.position
 	position.y = min(position.y, 485)
 	position.x = max(position.x, 200)
+	position.x = min(position.x, 1464)
