@@ -1,21 +1,24 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/World.gd" type="Script" id=4]
-[ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=5]
-[ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=6]
-[ext_resource path="res://Scripts/Resizer.gd" type="Script" id=7]
-[ext_resource path="res://Decor monde de lave volcan.png" type="Texture" id=8]
-[ext_resource path="res://Décor monde d'eau.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Ressources/Sounds/LAVAambiance.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Ressources/Sounds/WATERambiance.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Scenes/Decors/Cristal.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Decors/Ronce.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=15]
-[ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=16]
+[ext_resource path="res://Panneau.png" type="Texture" id=4]
+[ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=6]
+[ext_resource path="res://Ressources/Tilesets/tileset0.tres" type="TileSet" id=7]
+[ext_resource path="res://Ressources/Tilesets/tileset1.tres" type="TileSet" id=8]
+[ext_resource path="res://Scripts/Resizer.gd" type="Script" id=9]
+[ext_resource path="res://Decor monde de lave volcan.png" type="Texture" id=10]
+[ext_resource path="res://Décor monde d'eau.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Spider.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Ressources/Sounds/LAVAambiance.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Ressources/Sounds/WATERambiance.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Scenes/Decors/Cristal.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Decors/Ronce.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Ressources/UI/Barre_de_vie.png" type="Texture" id=18]
+[ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 35.6941 )
@@ -36,13 +39,66 @@ position = Vector2( 103.896, 474.885 )
 z_index = 1
 TextureProgressPath = NodePath("../CanvasLayer/TextureProgress")
 
+[node name="Panneaux" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Panneau" type="Sprite" parent="Panneaux"]
+editor/display_folded = true
+position = Vector2( 749.623, 389.761 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Panneaux/Panneau"]
+margin_left = -17.0
+margin_top = -14.0
+margin_right = 151.0
+margin_bottom = 16.0
+rect_rotation = 4.43069
+rect_scale = Vector2( 0.245273, 0.402307 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attention !"
+
+[node name="Panneau3" type="Sprite" parent="Panneaux"]
+position = Vector2( 1108.06, 105.447 )
+rotation = -2.0693
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Panneaux/Panneau3"]
+margin_left = -14.118
+margin_top = -20.1675
+margin_right = 153.882
+margin_bottom = 9.83252
+rect_rotation = 24.5172
+rect_scale = Vector2( 0.245273, 0.402307 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attention !"
+
+[node name="Panneau2" type="Sprite" parent="Panneaux"]
+editor/display_folded = true
+position = Vector2( 1233.24, 399.466 )
+rotation = -0.541298
+scale = Vector2( 0.642511, 0.779979 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Panneaux/Panneau2"]
+margin_left = -16.4146
+margin_top = -16.3372
+margin_right = 151.585
+margin_bottom = 13.6628
+rect_rotation = 13.8814
+rect_scale = Vector2( 0.245273, 0.402307 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Attention !"
+
 [node name="World" type="Node2D" parent="."]
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 PlayerPath = NodePath("../Player")
 
 [node name="Meta0" type="TileMap" parent="World"]
 mode = 2
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 format = 1
@@ -54,7 +110,7 @@ __meta__ = {
 [node name="Meta1" type="TileMap" parent="World"]
 z_index = 1
 mode = 2
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 format = 1
@@ -65,7 +121,7 @@ __meta__ = {
 [node name="FrontMeta0" type="TileMap" parent="World"]
 z_index = 2
 mode = 2
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 collision_layer = 2
@@ -80,7 +136,7 @@ __meta__ = {
 [node name="FrontMeta1" type="TileMap" parent="World"]
 z_index = 3
 mode = 2
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, -32, 0, 0 )
 collision_layer = 2
@@ -93,7 +149,7 @@ __meta__ = {
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
 editor/display_folded = true
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="LAVAworld" type="TextureRect" parent="World/ParallaxBackground"]
 show_behind_parent = true
@@ -102,7 +158,7 @@ margin_top = -117.913
 margin_right = 4049.95
 margin_bottom = 2775.09
 rect_scale = Vector2( 0.27, 0.27 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 expand = true
 stretch_mode = 4
 
@@ -113,26 +169,28 @@ margin_top = -113.558
 margin_right = 4058.09
 margin_bottom = 2779.44
 rect_scale = Vector2( 0.27, 0.27 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 expand = true
 stretch_mode = 4
 
 [node name="Mobs" type="Node2D" parent="World"]
+editor/display_folded = true
 z_index = 2
 
-[node name="Spider" parent="World/Mobs" instance=ExtResource( 10 )]
+[node name="Spider" parent="World/Mobs" instance=ExtResource( 12 )]
 position = Vector2( 1176.25, 153.627 )
 z_index = 1
 
 [node name="Musics" type="Node2D" parent="World"]
+editor/display_folded = true
 
 [node name="meta0" type="AudioStreamPlayer" parent="World/Musics"]
-stream = ExtResource( 11 )
+stream = ExtResource( 13 )
 autoplay = true
 bus = "Music"
 
 [node name="meta1" type="AudioStreamPlayer" parent="World/Musics"]
-stream = ExtResource( 12 )
+stream = ExtResource( 14 )
 volume_db = -80.0
 autoplay = true
 bus = "Music"
@@ -142,54 +200,243 @@ bus = "Music"
 [node name="FadeIn" type="Tween" parent="World/Musics"]
 
 [node name="Interactive" type="Node2D" parent="World"]
+editor/display_folded = true
 position = Vector2( 27.9335, 22.6467 )
 
-[node name="Cristal" parent="World/Interactive" instance=ExtResource( 13 )]
+[node name="Cristal" parent="World/Interactive" instance=ExtResource( 15 )]
 position = Vector2( 951.184, -274.323 )
 
-[node name="Cristal4" parent="World/Interactive" instance=ExtResource( 13 )]
+[node name="Cristal4" parent="World/Interactive" instance=ExtResource( 15 )]
 position = Vector2( 967.513, -115.699 )
 
-[node name="Cristal5" parent="World/Interactive" instance=ExtResource( 13 )]
+[node name="Cristal5" parent="World/Interactive" instance=ExtResource( 15 )]
 position = Vector2( 1134.3, -114.532 )
 
-[node name="Cristal6" parent="World/Interactive" instance=ExtResource( 13 )]
+[node name="Cristal6" parent="World/Interactive" instance=ExtResource( 15 )]
 position = Vector2( 1278.93, -115.699 )
 
-[node name="Cristal2" parent="World/Interactive" instance=ExtResource( 13 )]
+[node name="Cristal2" parent="World/Interactive" instance=ExtResource( 15 )]
 position = Vector2( 1221.18, -273.323 )
 
-[node name="Cristal3" parent="World/Interactive" instance=ExtResource( 13 )]
+[node name="Cristal3" parent="World/Interactive" instance=ExtResource( 15 )]
 position = Vector2( 1370.18, -274.323 )
 
-[node name="Ronce" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 1303.07, -274.648 )
 
-[node name="Ronce3" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce3" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 1081.07, -273.648 )
 
-[node name="Ronce2" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce2" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 1445.07, -272.648 )
 
-[node name="Ronce4" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce4" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 1277.11, -114.024 )
 
-[node name="Ronce5" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce5" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 1133.65, -111.691 )
 
-[node name="Ronce6" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce6" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 965.698, -112.857 )
 
-[node name="Ronce7" parent="World/Interactive" instance=ExtResource( 14 )]
+[node name="Ronce7" parent="World/Interactive" instance=ExtResource( 16 )]
 position = Vector2( 965.698, -112.857 )
+
+[node name="Coins" type="Node2D" parent="World"]
+editor/display_folded = true
+
+[node name="Coin" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 278.09, 519.177 )
+gravity = 90.0
+
+[node name="Coin2" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 456.09, 495.177 )
+gravity = 90.0
+
+[node name="Coin3" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 550.09, 463.177 )
+gravity = 90.0
+
+[node name="Coin4" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 864.091, 481.177 )
+gravity = 90.0
+
+[node name="Coin5" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 928.091, 492.177 )
+gravity = 90.0
+
+[node name="Coin6" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 996.091, 476.177 )
+gravity = 90.0
+
+[node name="Coin7" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1149.09, 395.177 )
+gravity = 90.0
+
+[node name="Coin8" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1149.09, 345.177 )
+gravity = 90.0
+
+[node name="Coin9" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1585.09, 266.177 )
+gravity = 90.0
+
+[node name="Coin10" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1544.09, 185.177 )
+gravity = 90.0
+
+[node name="Coin11" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1345.09, 163.177 )
+gravity = 90.0
+
+[node name="Coin12" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1268.09, 113.177 )
+gravity = 90.0
+
+[node name="Coin13" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1201.09, 126.177 )
+gravity = 90.0
+
+[node name="Coin14" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1174.09, 127.177 )
+gravity = 90.0
+
+[node name="Coin15" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1144.09, 126.177 )
+gravity = 90.0
+
+[node name="Coin16" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 860.091, 171.177 )
+gravity = 90.0
+
+[node name="Coin17" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 671.091, 117.177 )
+gravity = 90.0
+
+[node name="Coin18" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 534.09, 165.177 )
+gravity = 90.0
+
+[node name="Coin19" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 361.09, 123.177 )
+gravity = 90.0
+
+[node name="Coin20" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 118.09, 104.177 )
+gravity = 90.0
+
+[node name="Coin21" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 120.09, 16.1767 )
+gravity = 90.0
+
+[node name="Coin22" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 121.09, -57.8234 )
+gravity = 90.0
+
+[node name="Coin23" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 85.0899, -180.824 )
+gravity = 90.0
+
+[node name="Coin24" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 213.09, -149.823 )
+gravity = 90.0
+
+[node name="Coin25" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 278.09, -177.824 )
+gravity = 90.0
+
+[node name="Coin26" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 340.09, -207.824 )
+gravity = 90.0
+
+[node name="Coin27" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 404.09, -243.824 )
+gravity = 90.0
+
+[node name="Coin28" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 523.09, -273.824 )
+gravity = 90.0
+
+[node name="Coin29" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 695.091, -272.824 )
+gravity = 90.0
+
+[node name="Coin30" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 833.091, -271.824 )
+gravity = 90.0
+
+[node name="Coin31" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1029.09, -312.824 )
+gravity = 90.0
+
+[node name="Coin32" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1187.09, -313.824 )
+gravity = 90.0
+
+[node name="Coin33" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1298.09, -311.824 )
+gravity = 90.0
+
+[node name="Coin34" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1432.09, -314.824 )
+gravity = 90.0
+
+[node name="Coin35" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1478.09, -788.824 )
+gravity = 90.0
+
+[node name="Coin38" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1477.09, -868.824 )
+gravity = 90.0
+
+[node name="Coin39" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1512.09, -867.824 )
+gravity = 90.0
+
+[node name="Coin40" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1513.09, -830.824 )
+gravity = 90.0
+
+[node name="Coin41" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1555.09, -828.824 )
+gravity = 90.0
+
+[node name="Coin42" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1555.09, -867.824 )
+gravity = 90.0
+
+[node name="Coin43" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1582.09, -866.824 )
+gravity = 90.0
+
+[node name="Coin44" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1586.09, -828.824 )
+gravity = 90.0
+
+[node name="Coin45" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1587.09, -788.824 )
+gravity = 90.0
+
+[node name="Coin46" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1554.09, -790.824 )
+gravity = 90.0
+
+[node name="Coin36" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1478.09, -831.824 )
+gravity = 90.0
+
+[node name="Coin37" parent="World/Coins" instance=ExtResource( 17 )]
+position = Vector2( 1515.09, -789.824 )
+gravity = 90.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource( 7 )
+editor/display_folded = true
+script = ExtResource( 9 )
 mode = false
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 188.613, 53.0471 )
-texture = ExtResource( 15 )
+texture = ExtResource( 18 )
 
 [node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
 margin_left = 113.312
@@ -197,9 +444,10 @@ margin_top = 34.855
 margin_right = 613.312
 margin_bottom = 534.855
 value = 100.0
-texture_progress = ExtResource( 16 )
+texture_progress = ExtResource( 19 )
 
 [node name="MobObstacles" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="MobWalls" type="StaticBody2D" parent="MobObstacles"]
 position = Vector2( 714.911, 211.874 )
@@ -207,7 +455,7 @@ collision_layer = 16384
 collision_mask = 16384
 
 [node name="Obstacle3" type="CollisionShape2D" parent="MobObstacles/MobWalls"]
-position = Vector2( -364.965, -46.2972 )
+position = Vector2( -277.422, -32.7597 )
 shape = SubResource( 1 )
 
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Coin 02.png-eb8b37287bc2f99df498e859b4b0eed5.stex"
+path="res://.import/Wings 02.png-440eefb8889271f063ff0c2cb06863bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Coin/Coin 02.png"
-dest_files=[ "res://.import/Coin 02.png-eb8b37287bc2f99df498e859b4b0eed5.stex" ]
+source_file="res://Butterfly wings/Wings 02.png"
+dest_files=[ "res://.import/Wings 02.png-440eefb8889271f063ff0c2cb06863bd.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

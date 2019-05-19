@@ -148,6 +148,8 @@ func hit(side, damage = 1, knockback = 8):
 			life += -damage
 		invin = false
 		
+func coinPick():
+	$CoinPick.play()
 func damage(d):
 	life-=d
 """

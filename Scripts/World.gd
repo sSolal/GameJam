@@ -30,6 +30,8 @@ func _ready():
 	player.world = self
 	for mob in $Mobs.get_children():
 			mob.player = player
+	for coin in $Coins.get_children():
+			coin.player = player
 	for i in $Interactive.get_children():
 			i.player = player
 			i.switch(0)
