@@ -23,7 +23,6 @@ func _on_Options_pressed():
 
 
 func _on_Resume_pressed():
-	
 	get_tree().paused=false
 	queue_free()
 	

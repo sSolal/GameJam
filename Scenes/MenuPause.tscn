@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/MenuPause.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MenuPause.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Menu pause/Bannière pause.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Menu pause/Bouton resume.png" type="Texture" id=3]
 [ext_resource path="res://Ressources/Menu pause/Options_pause.png" type="Texture" id=4]
@@ -37,6 +37,7 @@ margin_right = 971.691
 margin_bottom = 454.059
 rect_scale = Vector2( 0.53, 0.53 )
 texture_normal = ExtResource( 5 )
+
 [connection signal="pressed" from="Sprite/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
