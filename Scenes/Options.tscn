@@ -34,8 +34,8 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -28.0
 margin_top = -28.0
-margin_right = 1061.0
-margin_bottom = 631.0
+margin_right = 9170.0
+margin_bottom = 5179.0
 color = Color( 0.337255, 0.337255, 0.337255, 1 )
 
 [node name="Music" type="VSlider" parent="."]
@@ -72,15 +72,11 @@ margin_top = 517.0
 margin_right = 211.242
 margin_bottom = 589.0
 rect_scale = Vector2( 1, 1.0041 )
-icon = null
-
-[node name="Label" type="Label" parent="Button"]
-margin_top = 19.9183
-margin_right = 191.0
-margin_bottom = 71.9183
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "MENU"
+icon = null
 
 [node name="CheckBox" type="CheckBox" parent="."]
 use_parent_material = true
@@ -104,19 +100,19 @@ mix_target = 2
 bus = "Effects"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 662.799
-margin_top = 110.759
-margin_right = 824.799
-margin_bottom = 149.759
+margin_left = 683.0
+margin_top = 111.0
+margin_right = 804.0
+margin_bottom = 150.0
 custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "EFFETS"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 843.882
-margin_top = 109.001
-margin_right = 1022.88
-margin_bottom = 148.001
+margin_left = 864.872
+margin_top = 109.0
+margin_right = 993.872
+margin_bottom = 131.0
 custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MUSIQUE"
@@ -129,7 +125,6 @@ margin_bottom = 74.1616
 custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PLEIN ECRAN"
-
 [connection signal="mouse_entered" from="Music" to="." method="_on_Music_mouse_entered"]
 [connection signal="mouse_exited" from="Music" to="." method="_on_Music_mouse_exited"]
 [connection signal="value_changed" from="Music" to="." method="_on_Music_value_changed"]
