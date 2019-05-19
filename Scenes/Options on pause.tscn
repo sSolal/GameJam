@@ -32,13 +32,13 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1023.0
 margin_bottom = 600.0
-color = Color( 0.560784, 0.545098, 0.545098, 1 )
+color = Color( 0.337255, 0.337255, 0.337255, 0.619608 )
 
 [node name="Music" type="VSlider" parent="."]
-margin_left = 898.318
-margin_top = 166.47
-margin_right = 924.318
-margin_bottom = 294.47
+margin_left = 897.318
+margin_top = 163.47
+margin_right = 923.318
+margin_bottom = 291.47
 rect_scale = Vector2( 2.15922, 2.36085 )
 size_flags_vertical = 0
 custom_styles/slider = SubResource( 1 )
@@ -50,9 +50,9 @@ ticks_on_borders = true
 
 [node name="Effects" type="VSlider" parent="."]
 margin_left = 712.318
-margin_top = 166.47
+margin_top = 162.47
 margin_right = 738.318
-margin_bottom = 294.47
+margin_bottom = 290.47
 rect_scale = Vector2( 2.15922, 2.36085 )
 size_flags_vertical = 0
 custom_styles/slider = SubResource( 1 )
@@ -110,9 +110,9 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "RETOUR"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 861.463
+margin_left = 850.356
 margin_top = 103.727
-margin_right = 990.463
+margin_right = 1011.36
 margin_bottom = 142.727
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

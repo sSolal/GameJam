@@ -44,4 +44,5 @@ func coupermusique():
 	$MusicSound.stop()
 
 func _on_TextureButton_pressed():
+	get_parent().openoption = false
 	queue_free()

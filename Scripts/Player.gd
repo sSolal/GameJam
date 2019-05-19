@@ -129,8 +129,10 @@ func metamorphose():
 	$Metamorphose_moche.visible = true
 func die(msg):
 	anim.travel("Hit")
-	$AnimationPlayer.connect("animation_finished",get_tree(),"reload_current_scene")
 	print("Died")
+	yield(get_tree().create_timer(2),"timeout")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	
 	#get_tree().reload_current_scene()
 	
 func hit(side, damage = 1, knockback = 8):

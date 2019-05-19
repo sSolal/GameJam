@@ -1,11 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/MenuPause.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Menu pause/Bannière pause.png" type="Texture" id=2]
-[ext_resource path="res://Ressources/Menu pause/Bouton resume.png" type="Texture" id=3]
-[ext_resource path="res://Ressources/Menu pause/Options_pause.png" type="Texture" id=4]
-[ext_resource path="res://Ressources/Menu pause/Restart.png" type="Texture" id=5]
-[ext_resource path="res://Ressources/UI/returntomenu.png" type="Texture" id=6]
+[ext_resource path="res://Ressources/Fonts/PixelFontPetit.tres" type="DynamicFont" id=3]
 
 [node name="Node2D" type="CanvasLayer"]
 pause_mode = 2
@@ -16,36 +13,66 @@ position = Vector2( 503.534, 143.179 )
 scale = Vector2( 0.506725, 0.506725 )
 texture = ExtResource( 2 )
 
-[node name="Resume" type="TextureButton" parent="Sprite"]
-margin_left = -312.0
-margin_top = 119.0
-margin_right = 275.0
-margin_bottom = 243.0
-texture_normal = ExtResource( 3 )
+[node name="Options" type="Button" parent="."]
+margin_left = 351.933
+margin_top = 264.0
+margin_right = 673.933
+margin_bottom = 319.0
+flat = true
 
-[node name="Options" type="TextureButton" parent="."]
-margin_left = 320.682
-margin_top = 264.096
-margin_right = 988.682
-margin_bottom = 382.096
-rect_scale = Vector2( 0.52, 0.52 )
-texture_normal = ExtResource( 4 )
+[node name="Label" type="Label" parent="Options"]
+margin_left = 6.34674
+margin_top = 6.34677
+margin_right = 314.347
+margin_bottom = 57.3468
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "OPTIONS"
 
-[node name="Restart" type="TextureButton" parent="."]
-margin_left = 321.691
-margin_top = 335.059
-margin_right = 971.691
-margin_bottom = 454.059
-rect_scale = Vector2( 0.53, 0.53 )
-texture_normal = ExtResource( 5 )
+[node name="Restart" type="Button" parent="."]
+margin_left = 348.347
+margin_top = 323.0
+margin_right = 679.347
+margin_bottom = 378.0
+flat = true
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 24.0
-margin_top = 519.0
-margin_right = 154.0
-margin_bottom = 585.0
-texture_normal = ExtResource( 6 )
-[connection signal="pressed" from="Sprite/Resume" to="." method="_on_Resume_pressed"]
+[node name="Label2" type="Label" parent="Restart"]
+margin_top = 4.76001
+margin_right = 329.0
+margin_bottom = 55.76
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RESTART"
+
+[node name="Resume" type="Button" parent="."]
+margin_left = 368.6
+margin_top = 211.64
+margin_right = 650.6
+margin_bottom = 263.64
+flat = true
+
+[node name="Label2" type="Label" parent="Resume"]
+margin_top = -1.58667
+margin_right = 285.0
+margin_bottom = 49.4133
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RESUME"
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 12.0
+margin_top = 538.0
+margin_right = 204.0
+margin_bottom = 590.0
+flat = true
+
+[node name="MenuLab" type="Label" parent="Menu"]
+margin_top = -2.0
+margin_right = 193.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MENU"
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
