@@ -127,11 +127,13 @@ z_index = 1
 [node name="meta0" type="AudioStreamPlayer" parent="World/Musics"]
 stream = ExtResource( 11 )
 autoplay = true
+bus = "Music"
 
 [node name="meta1" type="AudioStreamPlayer" parent="World/Musics"]
 stream = ExtResource( 12 )
 volume_db = -80.0
 autoplay = true
+bus = "Music"
 
 [node name="FadeOut" type="Tween" parent="World/Musics"]
 
