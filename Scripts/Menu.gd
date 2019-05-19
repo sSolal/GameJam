@@ -25,5 +25,5 @@ func _on_Train_pressed():
 	get_tree().change_scene("res://Scenes/Tuto.tscn")
 
 
-func _on_Button_pressed():
+func _on_Credits_pressed():
 	get_tree().change_scene("res://Scenes/Crédits.tscn")
