@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/MenuPause.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Menu pause/Bannière pause.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Menu pause/Bouton resume.png" type="Texture" id=3]
 [ext_resource path="res://Ressources/Menu pause/Options_pause.png" type="Texture" id=4]
 [ext_resource path="res://Ressources/Menu pause/Restart.png" type="Texture" id=5]
+[ext_resource path="res://Ressources/UI/returntomenu.png" type="Texture" id=6]
 
 [node name="Node2D" type="CanvasLayer"]
 pause_mode = 2
@@ -38,6 +39,13 @@ margin_bottom = 454.059
 rect_scale = Vector2( 0.53, 0.53 )
 texture_normal = ExtResource( 5 )
 
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 24.0
+margin_top = 519.0
+margin_right = 154.0
+margin_bottom = 585.0
+texture_normal = ExtResource( 6 )
 [connection signal="pressed" from="Sprite/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
