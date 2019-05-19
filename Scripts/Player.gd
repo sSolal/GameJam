@@ -112,7 +112,8 @@ func _process(delta):
 		die("Vous avez quitté le connu")
 	if life<=0:
 		die("Plus de vie")
-	BarLife.value = life
+	if BarLife :
+		BarLife.value = life
 func v_to_anim():
 	if is_on_floor():
 		if abs(velocity.x)>=speed*run_speed:
@@ -132,7 +133,7 @@ func metamorphose():
 	$MetaCool.visible = true
 func die(msg):
 	anim.travel("Hit")
-	print("Died")
+	#print("Died")
 	yield(get_tree().create_timer(2),"timeout")
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	
@@ -143,7 +144,7 @@ func hit(side, damage = 1, knockback = 8):
 		invin = true
 		position.x += knockback*side
 		for h in range(1,21):
-			yield(get_tree().create_timer(0.1),"timeout")
+			yield(get_tree().create_timer(0.05),"timeout")
 			life += -damage
 		invin = false
 		

@@ -18,7 +18,7 @@
 [ext_resource path="res://Ressources/UI/Vie.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5, 18 )
+extents = Vector2( 5, 35.6941 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -200,7 +200,6 @@ value = 100.0
 texture_progress = ExtResource( 16 )
 
 [node name="MobObstacles" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="MobWalls" type="StaticBody2D" parent="MobObstacles"]
 position = Vector2( 714.911, 211.874 )
@@ -208,7 +207,7 @@ collision_layer = 16384
 collision_mask = 16384
 
 [node name="Obstacle3" type="CollisionShape2D" parent="MobObstacles/MobWalls"]
-position = Vector2( -386.935, -30.7889 )
+position = Vector2( -364.965, -46.2972 )
 shape = SubResource( 1 )
 
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]
