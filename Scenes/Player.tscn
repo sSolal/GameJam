@@ -291,4 +291,3 @@ scale = Vector2( 0.1, 0.1 )
 z_index = 5
 texture = ExtResource( 12 )
 script = ExtResource( 13 )
-
