@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Scripts/Options on pause.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Character/Slider.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Ressources/Fonts/OptionsFont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Ressources/Sounds/OPTIONSambiance.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=6]
+[ext_resource path="res://Ressources/Fonts/OptionsFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Ressources/Sounds/OPTIONSambiance.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=6]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -62,9 +62,6 @@ custom_styles/grabber_area = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 ticks_on_borders = true
 
-[node name="Button" parent="." instance=ExtResource( 3 )]
-rect_scale = Vector2( 1, 1.0041 )
-
 [node name="CheckBox" type="CheckBox" parent="."]
 use_parent_material = true
 margin_left = 41.0
@@ -73,11 +70,11 @@ margin_right = 287.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 3, 3 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="MusicSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 4 )
 mix_target = 2
 bus = "Music"
 
@@ -85,55 +82,55 @@ bus = "Music"
 wait_time = 2.0
 
 [node name="EffectsSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 mix_target = 2
 bus = "Effects"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 678.622
-margin_top = 103.727
-margin_right = 801.622
-margin_bottom = 142.727
+margin_left = 656.409
+margin_top = 124.354
+margin_right = 854.409
+margin_bottom = 163.354
 rect_pivot_offset = Vector2( -368.622, 236.273 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "EFFETS"
 
-[node name="Label4" type="Label" parent="."]
-margin_left = 58.1372
-margin_top = 377.664
-margin_right = 196.137
-margin_bottom = 414.664
-rect_pivot_offset = Vector2( -368.622, 236.273 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "RETOUR"
-
 [node name="Label" type="Label" parent="."]
-margin_left = 850.356
-margin_top = 103.727
-margin_right = 1011.36
-margin_bottom = 142.727
-custom_fonts/font = ExtResource( 4 )
+margin_left = 837.663
+margin_top = 124.354
+margin_right = 1036.66
+margin_bottom = 163.354
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MUSIQUE"
 
 [node name="Label3" type="Label" parent="."]
 margin_left = 107.244
-margin_top = 29.8873
-margin_right = 268.244
-margin_bottom = 68.8873
-custom_fonts/font = ExtResource( 4 )
+margin_top = 34.6473
+margin_right = 388.244
+margin_bottom = 73.6473
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PLEIN ECRAN"
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Return" type="Button" parent="."]
 margin_left = 61.0
 margin_top = 382.0
-margin_right = 195.0
-margin_bottom = 408.0
+margin_right = 225.0
+margin_bottom = 416.0
+flat = true
+
+[node name="Label5" type="Label" parent="Return"]
+margin_left = 3.0
+margin_top = 5.0
+margin_right = 165.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RETOUR"
 [connection signal="value_changed" from="Music" to="." method="_on_Music_value_changed"]
 [connection signal="value_changed" from="Effects" to="." method="_on_Effects_value_changed"]
 [connection signal="toggled" from="CheckBox" to="." method="EnableFullscreen"]
 [connection signal="timeout" from="Timer" to="." method="coupermusique"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]

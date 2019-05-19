@@ -43,6 +43,6 @@ func _on_Music_value_changed(volume):
 func coupermusique():
 	$MusicSound.stop()
 
-func _on_TextureButton_pressed():
+func _on_Return_pressed():
 	get_parent().openoption = false
 	queue_free()
