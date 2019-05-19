@@ -35,6 +35,8 @@ func _ready():
 	for i in $Interactive.get_children():
 			i.player = player
 			i.switch(0)
+	for i in $Decors.get_children():
+		i.switch(0)
 	$Musics.get_child(0).play()
 	startTime = OS.get_ticks_msec()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -115,6 +117,8 @@ func switch(aim):
 	#$Musics.get_child(aim).play()
 	for dec in $Interactive.get_children():
 		dec.switch(aim)
+	for i in $Decors.get_children():
+		i.switch(aim)
 	for r in range(0,r_max):
 		chunk(r)
 		if r<visible_delay:

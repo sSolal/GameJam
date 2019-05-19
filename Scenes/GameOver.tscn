@@ -35,15 +35,11 @@ margin_left = 319.055
 margin_top = 379.109
 margin_right = 672.055
 margin_bottom = 458.109
-flat = true
-
-[node name="Label" type="Label" parent="Button"]
-margin_left = 23.6922
-margin_top = 7.89154
-margin_right = 358.692
-margin_bottom = 64.8915
 custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "RESTART"
+flat = true
 
 [node name="Score" type="Label" parent="."]
 margin_left = 604.523
