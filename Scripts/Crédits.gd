@@ -16,6 +16,5 @@ func _process(delta):
 #func _process(delta):
 #	pass
 
-
-func _on_TextureButton_pressed():
+func _on_Menu_pressed():
 	get_tree().change_scene("res://Scenes/Menu.tscn")

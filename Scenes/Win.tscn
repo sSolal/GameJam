@@ -78,5 +78,5 @@ margin_bottom = 378.343
 rect_scale = Vector2( 1.7, 1.7 )
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-
+[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]

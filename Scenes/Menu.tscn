@@ -45,7 +45,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-text = "Commencons"
+text = "Commencer"
 flat = true
 
 [node name="Button" type="Button" parent="."]
@@ -64,7 +64,6 @@ position = Vector2( 510.842, 302.136 )
 current = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
 [connection signal="pressed" from="Train" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_Option_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
