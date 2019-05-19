@@ -7,4 +7,3 @@ font_path = "res://Ressources/Fonts/A Gentle Touch.ttf"
 [resource]
 size = 36
 font_data = SubResource( 1 )
-

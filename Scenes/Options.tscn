@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Character/Slider.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/VOLUME.png" type="Texture" id=3]
-[ext_resource path="res://Ressources/Bum Bum Tam Tam KondZilla.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ressources/Fonts/new_dynamicfont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Ressources/Plein écran.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ressources/Fonts/new_dynamicfont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Ressources/Plein écran.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -63,10 +62,9 @@ position = Vector2( 925.807, 125.614 )
 texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
 autoplay = true
 
-[node name="Button" parent="." instance=ExtResource( 5 )]
+[node name="Button" parent="." instance=ExtResource( 4 )]
 rect_scale = Vector2( 1, 1.0041 )
 
 [node name="CheckBox" type="CheckBox" parent="."]
@@ -77,12 +75,12 @@ margin_right = 287.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 3, 3 )
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 205, 48 )
-
-[connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
+[connection signal="value_changed" from="Music" to="." method="_on_Music_value_changed"]
+[connection signal="value_changed" from="Effects" to="." method="_on_Effects_value_changed"]
 [connection signal="toggled" from="CheckBox" to="." method="EnableFullscreen"]
