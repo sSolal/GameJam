@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TAM033-Ronan_Dec-1-Supernova.ogg-9b8d7738747bd0a4b02874dd97ff3d3a.oggstr"
+
+[deps]
+
+source_file="res://Ressources/Sounds/TAM033-Ronan_Dec-1-Supernova.ogg"
+dest_files=[ "res://.import/TAM033-Ronan_Dec-1-Supernova.ogg-9b8d7738747bd0a4b02874dd97ff3d3a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

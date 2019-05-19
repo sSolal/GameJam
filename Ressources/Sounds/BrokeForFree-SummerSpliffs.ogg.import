@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BrokeForFree-SummerSpliffs.ogg-8ebf325c04b3763d2689181f1364e2fa.oggstr"
+
+[deps]
+
+source_file="res://Ressources/Sounds/BrokeForFree-SummerSpliffs.ogg"
+dest_files=[ "res://.import/BrokeForFree-SummerSpliffs.ogg-8ebf325c04b3763d2689181f1364e2fa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
