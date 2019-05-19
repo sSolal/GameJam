@@ -3,7 +3,7 @@ extends CanvasLayer
 # Declare member variables here. Examples:
 var openoption = false
 # var b = "text"
-onready var options = preload("res://Scenes/Options on pause.tscn")
+onready var options = preload("res://Scenes/OptionsPopup.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

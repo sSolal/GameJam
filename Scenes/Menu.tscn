@@ -26,7 +26,7 @@ margin_top = 22.2134
 margin_right = 248.453
 margin_bottom = 52.2134
 custom_fonts/font = ExtResource( 3 )
-text = "S'entraîner"
+text = "S'entrainer"
 
 [node name="Option" type="Button" parent="."]
 margin_left = 47.0112
@@ -65,6 +65,7 @@ position = Vector2( 510.842, 302.136 )
 current = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Train" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_Option_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

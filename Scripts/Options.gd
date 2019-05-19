@@ -7,7 +7,7 @@ extends Node
 func _ready():
 	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 1)
 	$Music.value = (AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))+30)*2
-	$Music.value = (AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Effects"))+30)*2
+	$Effects.value = (AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Effects"))+30)*2
 	print(AudioServer.get_bus_volume_db(1))
 	$CheckBox.pressed = OS.window_fullscreen
 
@@ -31,14 +31,16 @@ func _on_Effects_value_changed(volume):
 
 
 func _on_Music_value_changed(volume):
-	$Timer.start()
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), (volume/2-30))
 	if volume == 0:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),true)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),false)
-	if $MusicSound.playing == false:
-		$MusicSound.play()
 		
-func coupermusique():
+
+func _on_Music_mouse_entered():
+	$MusicSound.play(randf()*250)
+
+
+func _on_Music_mouse_exited():
 	$MusicSound.stop()
