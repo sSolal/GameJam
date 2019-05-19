@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Fonts/PixelFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Ressources/Fonts/Font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Ressources/Fonts/PixelFontPetit.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,7 +22,7 @@ margin_bottom = 255.534
 custom_fonts/font = ExtResource( 2 )
 text = "GAME OVER"
 
-[node name="Score" type="Label" parent="."]
+[node name="ScoreText" type="Label" parent="."]
 margin_left = 276.081
 margin_top = 285.601
 margin_right = 601.081
@@ -38,9 +39,18 @@ flat = true
 
 [node name="Label" type="Label" parent="Button"]
 margin_left = 23.6922
-margin_top = 9.47821
+margin_top = 7.89154
 margin_right = 358.692
-margin_bottom = 66.4782
+margin_bottom = 64.8915
 custom_fonts/font = ExtResource( 4 )
 text = "RESTART"
+
+[node name="Score" type="Label" parent="."]
+margin_left = 604.523
+margin_top = 297.775
+margin_right = 682.523
+margin_bottom = 349.775
+rect_scale = Vector2( 1.7, 1.7 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

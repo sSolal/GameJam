@@ -6,7 +6,8 @@ var openoption = false
 onready var options = preload("res://Scenes/OptionsPopup.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	resize()
+	get_tree().get_root().connect("size_changed",self,"resize")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -15,7 +16,9 @@ func _process(delta):
 		queue_free()
 	
 	
-
+func resize():
+	$Node2D.position = get_tree().get_root().size/2
+	
 func _on_Options_pressed():
 	if openoption == false:
 		openoption = true
