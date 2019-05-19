@@ -129,18 +129,19 @@ editor/display_folded = true
 [node name="meta0" type="AudioStreamPlayer" parent="World/Musics"]
 stream = ExtResource( 11 )
 autoplay = true
+bus = "Music"
 
 [node name="meta1" type="AudioStreamPlayer" parent="World/Musics"]
 stream = ExtResource( 12 )
 volume_db = -80.0
 autoplay = true
+bus = "Music"
 
 [node name="FadeOut" type="Tween" parent="World/Musics"]
 
 [node name="FadeIn" type="Tween" parent="World/Musics"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 7 )
 mode = false
 
@@ -168,5 +169,4 @@ collision_mask = 16384
 [node name="Obstacle3" type="CollisionShape2D" parent="MobObstacles/MobWalls"]
 position = Vector2( -386.935, -30.7889 )
 shape = SubResource( 1 )
-
 [connection signal="metamorphose" from="World" to="Player" method="metamorphose"]
