@@ -109,6 +109,8 @@ func _process(delta):
 		current_anim = next_anim
 	if position.y>1000:
 		die("Vous avez quitté le connu")
+	if BarLife.value<=0:
+		die("Plus de vie")
 func v_to_anim():
 	if is_on_floor():
 		if abs(velocity.x)>=speed*run_speed:
@@ -126,11 +128,12 @@ func metamorphose():
 	$Metamorphose_moche.scale=Vector2(0.1,0.1)
 	$Metamorphose_moche.visible = true
 func die(msg):
+	anim.travel("Hit")
+	$AnimationPlayer.connect("animation_finished",get_tree(),"reload_current_scene")
 	print("Died")
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
 	
 func hit(side, damage = 1, knockback = 8):
-	anim.travel("Hit")
 	if invin == false:
 		invin = true
 		position.x += 8*side
