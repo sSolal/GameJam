@@ -3,7 +3,7 @@ extends CanvasLayer
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+onready var options = preload("res://Scenes/Options on pause.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,13 +14,14 @@ func _process(delta):
 		get_tree().paused=false
 		queue_free()
 	
-
-
+	
 
 func _on_Options_pressed():
 	get_tree().paused=false
-	get_tree().change_scene("res://Scenes/Options.tscn")
-
+	#get_tree().change_scene("res://Scenes/Options on pause.tscn")
+	var popup = options.instance()
+	add_child(popup)
+	
 
 func _on_Resume_pressed():
 	get_tree().paused=false
