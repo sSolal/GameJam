@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ressources/Fonts/PixelFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Ressources/Fonts/Font.tres" type="DynamicFont" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GAMEOVER" type="Label" parent="."]
+margin_left = 180.881
+margin_top = 174.534
+margin_right = 851.881
+margin_bottom = 255.534
+custom_fonts/font = ExtResource( 1 )
+text = "GAME OVER"
+
+[node name="Score" type="Label" parent="."]
+margin_left = 276.081
+margin_top = 285.601
+margin_right = 601.081
+margin_bottom = 342.601
+custom_fonts/font = ExtResource( 2 )
+text = "Votre score est de "
