@@ -50,7 +50,7 @@ PlayerPath = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 127.128, 477.293 )
-z_index = 1
+z_index = 25
 TextureProgressPath = NodePath("../CanvasLayer/TextureProgress")
 ScoreLabel = NodePath("../CanvasLayer/ScoreLabel")
 
@@ -789,11 +789,11 @@ position = Vector2( 490.098, -1585.33 )
 shape = SubResource( 1 )
 
 [node name="Obstacle5" type="CollisionShape2D" parent="MobObstacles/MobWalls"]
-position = Vector2( -270.199, -813.967 )
+position = Vector2( -265.555, -815.957 )
 shape = SubResource( 1 )
 
 [node name="Obstacle4" type="CollisionShape2D" parent="MobObstacles/MobWalls"]
-position = Vector2( 61.1671, -816.154 )
+position = Vector2( -20.4339, -818.144 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -801,7 +801,6 @@ position = Vector2( 1202.78, -2113.2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
 frames = SubResource( 2 )
-frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]

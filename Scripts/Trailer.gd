@@ -9,7 +9,7 @@ reçoit l'aide du ButterBoss. Il lui confie un objet d'une puissance
 phénoménale lui permettant de métamorphoser
 intégralement son environemment.
                                                                             
-	                                                                       """
+	                     """
 var tuto_text = """Malheureusement, le ButterBoss ne lui avait pas tout dit...
 Il avait omis de préciser comment fonctionnait l'appareil,
 et le pauvre Butterlarva du comprendre tout seul qu'il fallait
@@ -28,7 +28,7 @@ var tuto = false
 #	Mais il peut désormais métamorphoser le monde autour de lui !""",
 #	"""Et le voilà parti pour son ascension vers la métamorphose"""]
 var e = 0
-var spl = 0.03
+var spl = 0.025
 var letter = 0
 var id = 0
 # Called when the node enters the scene tree for the first time.
@@ -42,7 +42,7 @@ func _ready():
 
 func _process(delta):
 	if not tuto:
-		if letter<414:
+		if letter<364:
 			e+=delta
 			if e>spl:
 				e = 0
