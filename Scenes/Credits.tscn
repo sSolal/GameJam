@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Crédits.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Crédits.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Ressources/UI/returntomenu.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 0, -1.6702 )
@@ -24,7 +25,7 @@ margin_bottom = 830.223
 custom_fonts/font = ExtResource( 3 )
 text = "Contributeurs :
 
-Developpeur principal : 
+Developpeur principal :
 Solal Stern
 
 Graphiste principale :
@@ -59,3 +60,10 @@ Licence: http://creativecommons.org
 "
 align = 1
 
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 15.6998
+margin_top = 12.1926
+margin_right = 143.7
+margin_bottom = 76.1926
+texture_normal = ExtResource( 4 )
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

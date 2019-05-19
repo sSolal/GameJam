@@ -48,7 +48,7 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "Commencons"
 flat = true
 
-[node name="Credits" type="Button" parent="."]
+[node name="Button" type="Button" parent="."]
 margin_left = 40.6982
 margin_top = 240.16
 margin_right = 356.698
@@ -68,4 +68,4 @@ current = true
 [connection signal="pressed" from="Train" to="." method="_on_Train_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_Option_pressed"]
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
