@@ -42,7 +42,9 @@ func _ready():
 #	pass
 func _process(delta):
 	if Input.is_key_pressed(KEY_W):
-		if not switching and not player.diving:
+		var playercell = get_child(currentMeta).world_to_map(player.position)
+		print(playercell)
+		if not switching and not player.diving and (get_child(currentMeta).get_cell(playercell.x,playercell.y)==-1):
 			switching = true
 			aim = 1-currentMeta
 			var pos = $Meta0.world_to_map(player.position)
