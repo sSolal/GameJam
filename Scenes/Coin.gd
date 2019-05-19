@@ -14,6 +14,6 @@ func _ready():
 
 
 func _on_Coin_body_shape_entered(body_id, body, body_shape, area_shape):
-	player.coinPick()
 	if body.name == "Player":
+		player.coinPick()
 		queue_free()
