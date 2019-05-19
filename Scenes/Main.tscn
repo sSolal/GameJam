@@ -136,6 +136,7 @@ autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
+mode = false
 
 [node name="Button" parent="CanvasLayer" instance=ExtResource( 12 )]
 
