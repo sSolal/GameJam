@@ -74,10 +74,10 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="Label2" type="Label" parent="Camera2D/Button"]
-margin_left = 38.4422
-margin_top = 19.5483
-margin_right = 148.442
-margin_bottom = 80.5483
+margin_left = 23.6461
+margin_top = 13.8484
+margin_right = 94.6461
+margin_bottom = 53.8484
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SKIP"
