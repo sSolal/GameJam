@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Character/Slider.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Ressources/Fonts/OptionsFont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Ressources/Sounds/OPTIONSambiance.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=6]
+[ext_resource path="res://Ressources/Fonts/PixelFontPetit.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Ressources/Fonts/OptionsFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Ressources/Sounds/OPTIONSambiance.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Ressources/Sounds/Jump 1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -65,7 +67,20 @@ custom_styles/focus = SubResource( 5 )
 ticks_on_borders = true
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
+margin_left = 16.2419
+margin_top = 517.0
+margin_right = 211.242
+margin_bottom = 589.0
 rect_scale = Vector2( 1, 1.0041 )
+icon = null
+
+[node name="Label" type="Label" parent="Button"]
+margin_top = 19.9183
+margin_right = 191.0
+margin_bottom = 71.9183
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MENU"
 
 [node name="CheckBox" type="CheckBox" parent="."]
 use_parent_material = true
@@ -75,11 +90,11 @@ margin_right = 287.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 3, 3 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="MusicSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 mix_target = 2
 bus = "Music"
 
@@ -87,34 +102,34 @@ bus = "Music"
 wait_time = 2.0
 
 [node name="EffectsSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 mix_target = 2
 bus = "Effects"
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 678.622
-margin_top = 103.727
-margin_right = 801.622
-margin_bottom = 142.727
-custom_fonts/font = ExtResource( 4 )
+margin_left = 662.799
+margin_top = 110.759
+margin_right = 824.799
+margin_bottom = 149.759
+custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "EFFETS"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 861.463
-margin_top = 103.727
-margin_right = 990.463
-margin_bottom = 142.727
-custom_fonts/font = ExtResource( 4 )
+margin_left = 843.882
+margin_top = 109.001
+margin_right = 1022.88
+margin_bottom = 148.001
+custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MUSIQUE"
 
 [node name="Label3" type="Label" parent="."]
 margin_left = 107.244
-margin_top = 29.8873
-margin_right = 268.244
-margin_bottom = 68.8873
-custom_fonts/font = ExtResource( 4 )
+margin_top = 35.1616
+margin_right = 388.244
+margin_bottom = 74.1616
+custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PLEIN ECRAN"
 [connection signal="value_changed" from="Music" to="." method="_on_Music_value_changed"]

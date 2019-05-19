@@ -37,9 +37,9 @@ margin_bottom = 378.0
 flat = true
 
 [node name="Label2" type="Label" parent="Restart"]
-margin_top = 4.76001
+margin_top = 3.17334
 margin_right = 329.0
-margin_bottom = 55.76
+margin_bottom = 54.1733
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "RESTART"
@@ -74,5 +74,6 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU"
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
