@@ -84,8 +84,8 @@ func _process(delta):
 		if not diving :
 			diving = true
 			$Water.play()
-			if world.currentMeta == 0:
-				print("HEYBRO")
+			if (world.currentMeta == 0 and not (world.switching)) or (world.switching and world.aim==0):
+				#print("HEYBRO")
 				for h in range(1,21):
 					yield(get_tree().create_timer(0.3),"timeout")
 					BarLife.value += -5

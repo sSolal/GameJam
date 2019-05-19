@@ -11,7 +11,7 @@ soft_clip_ratio = 5.0
 resource_name = "Amplify"
 
 [resource]
-bus/0/volume_db = 3.6
+bus/0/volume_db = -12.2
 bus/0/effect/0/effect = SubResource( 1 )
 bus/0/effect/0/enabled = true
 bus/0/effect/1/effect = SubResource( 2 )
