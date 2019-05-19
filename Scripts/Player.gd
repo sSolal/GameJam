@@ -91,9 +91,15 @@ func _process(delta):
 			$Water.play()
 			if (world.currentMeta == 0 and not (world.switching)) or (world.switching and world.aim==0):
 				#print("HEYBRO")
+				$Fire.visible = true
 				for h in range(1,21):
 					yield(get_tree().create_timer(0.3),"timeout")
 					life += -5
+					if $Fire.frame>=7:
+						print("Loop back")
+						$Fire.frame = 0
+					$Fire.frame+=1
+					
 	else:
 		diving = false
 	if is_on_floor():
@@ -145,6 +151,7 @@ func die(msg):
 	#get_tree().reload_current_scene()
 	
 func hit(side, damage = 1, knockback = 8):
+	$Body.modulate = Color(1,0.5,0.5)
 	if invin == false:
 		invin = true
 		position.x += knockback*side
@@ -152,6 +159,7 @@ func hit(side, damage = 1, knockback = 8):
 			yield(get_tree().create_timer(0.05),"timeout")
 			life += -damage
 		invin = false
+	$Body.modulate = Color(1,1,1)
 		
 func coinPick():
 	$CoinPick.play()
