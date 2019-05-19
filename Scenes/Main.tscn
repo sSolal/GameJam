@@ -169,7 +169,7 @@ __meta__ = {
 }
 
 [node name="FrontMeta0" type="TileMap" parent="World"]
-z_index = 2
+z_index = 30
 mode = 2
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 32, 32 )
@@ -184,7 +184,7 @@ __meta__ = {
 }
 
 [node name="FrontMeta1" type="TileMap" parent="World"]
-z_index = 3
+z_index = 30
 mode = 2
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 32, 32 )
@@ -769,7 +769,6 @@ custom_fonts/font = ExtResource( 5 )
 text = "Score: 000"
 
 [node name="MobObstacles" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="MobWalls" type="StaticBody2D" parent="MobObstacles"]
 position = Vector2( 714.911, 211.874 )
@@ -801,6 +800,7 @@ position = Vector2( 1202.78, -2113.2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
 frames = SubResource( 2 )
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
