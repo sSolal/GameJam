@@ -6,6 +6,7 @@ extends KinematicBody2D
 export (NodePath) var TextureProgressPath
 var world
 var BarLife
+var life=100
 var velocity = Vector2(0,0)
 var gravity = 981
 var speed = 100#85
@@ -30,7 +31,7 @@ func _ready():
 func _process(delta):
 	velocity.y+=gravity*delta
 	velocity = move_and_slide(velocity,Vector2(0,-1))
-	velocity.x = velocity.x*0.95
+	velocity.x = velocity.x*0.91
 	$Body.flip_h = velocity.x<0
 	
 	"""if abs(velocity.x)<25:
@@ -88,7 +89,7 @@ func _process(delta):
 				#print("HEYBRO")
 				for h in range(1,21):
 					yield(get_tree().create_timer(0.3),"timeout")
-					BarLife.value += -5
+					life += -5
 	else:
 		diving = false
 	if is_on_floor():
@@ -109,8 +110,9 @@ func _process(delta):
 		current_anim = next_anim
 	if position.y>1000:
 		die("Vous avez quitté le connu")
-	if BarLife.value<=0:
+	if life<=0:
 		die("Plus de vie")
+	BarLife.value = life
 func v_to_anim():
 	if is_on_floor():
 		if abs(velocity.x)>=speed*run_speed:
@@ -138,11 +140,14 @@ func die(msg):
 func hit(side, damage = 1, knockback = 8):
 	if invin == false:
 		invin = true
-		position.x += 8*side
+		position.x += knockback*side
 		for h in range(1,21):
-			yield(get_tree().create_timer(0.3),"timeout")
-			BarLife.value += -damage
+			yield(get_tree().create_timer(0.1),"timeout")
+			life += -damage
 		invin = false
+		
+func damage(d):
+	life-=d
 """
 func hitright():
 	if invin == false:

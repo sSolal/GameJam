@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mini décor Arbre.png-d672b19871f7509b41149993bd3bfb19.stex"
+path="res://.import/Cristeaux.png-6e8cc9f083c6a7ea7a29ac535e898192.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mini décor Arbre.png"
-dest_files=[ "res://.import/Mini décor Arbre.png-d672b19871f7509b41149993bd3bfb19.stex" ]
+source_file="res://Ressources/Decors/Cristeaux.png"
+dest_files=[ "res://.import/Cristeaux.png-6e8cc9f083c6a7ea7a29ac535e898192.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
