@@ -50,25 +50,20 @@ texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D"]
 modulate = Color( 1, 1, 1, 0.427451 )
-margin_left = -473.616
-margin_top = 67.4636
-margin_right = 479.384
-margin_bottom = 291.464
+margin_left = -474.0
+margin_top = 67.0
+margin_right = 492.0
+margin_bottom = 291.0
 
 [node name="Label" type="Label" parent="Camera2D"]
-margin_left = -544.76
-margin_top = 22.4636
-margin_right = 551.24
-margin_bottom = 346.464
+margin_left = -452.0
+margin_top = 71.5246
+margin_right = 467.0
+margin_bottom = 272.525
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Dans un futur lointain, en orbite autour de Butters, un
-Butterlarva qui n'arrivait pas à devenir Butterfly reçu l'aide
-du ButterBoss, qui lui confia un objet très technologique
-lui permettant de transformer son
-environemment."
 align = 1
-valign = 1
+autowrap = true
 
 [node name="Button" type="Button" parent="Camera2D"]
 margin_left = 360.032
@@ -79,12 +74,13 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="Label2" type="Label" parent="Camera2D/Button"]
-margin_left = 19.0161
-margin_top = 13.073
-margin_right = 129.016
-margin_bottom = 74.073
+margin_left = 38.4422
+margin_top = 19.5483
+margin_right = 148.442
+margin_bottom = 80.5483
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SKIP"
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_Button_pressed"]
