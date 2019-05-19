@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Decors/Cristal.gd" type="Script" id=1]
+[ext_resource path="res://Ressources/Decors/Ronces.png" type="Texture" id=2]
+
+[node name="Ronce" type="Area2D"]
+script = ExtResource( 1 )
+num = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -14.9869, -1.62767, 15.8853, -1.53793, 18.6674, -18.8587, 8.58555, -25.1918, -1.58155, -24.9659, -10.1671, -15.9285 )
+
+[node name="Image" type="Sprite" parent="."]
+position = Vector2( 2.03342, -20.2212 )
+texture = ExtResource( 2 )
+

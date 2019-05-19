@@ -11,7 +11,7 @@ onready var dog_scene = preload("res://Scenes/Dog.tscn")
 var x = 0
 var y = 0
 var r_max = 60
-var visible_delay = 8
+var visible_delay = 10
 
 var currentMeta = 0
 var aim = 0
@@ -32,6 +32,7 @@ func _ready():
 			mob.player = player
 	for i in $Interactive.get_children():
 			i.player = player
+			i.switch(0)
 	$Musics.get_child(0).play()
 	startTime = OS.get_ticks_msec()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -108,10 +109,12 @@ func switch(aim):
 	$Musics/FadeIn.start()
 	#$Musics.get_child(currentMeta).stop()
 	#$Musics.get_child(aim).play()
+	for dec in $Interactive.get_children():
+		dec.switch(aim)
 	for r in range(0,r_max):
 		chunk(r)
 		if r<visible_delay:
-			yield(get_tree().create_timer(0.2), "timeout")
+			yield(get_tree().create_timer(0.10), "timeout")
 	if aim==1:
 		for mob in $Mobs.get_children():
 			var newdog = dog_scene.instance()
