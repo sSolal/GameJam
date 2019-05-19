@@ -19,3 +19,5 @@ func resize():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position = player.position
+	position.y = min(position.y, 485)
+	position.x = max(position.x, 200)
