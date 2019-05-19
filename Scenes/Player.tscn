@@ -299,7 +299,7 @@ visible = false
 scale = Vector2( 0.1, 0.1 )
 z_index = 5
 frames = SubResource( 33 )
-frame = 7
+frame = 3
 playing = true
 script = ExtResource( 17 )
 
@@ -311,4 +311,3 @@ visible = false
 position = Vector2( 0.214638, -32.6251 )
 texture = ExtResource( 19 )
 hframes = 8
-

@@ -19,6 +19,10 @@ config/name="GameJams"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://Scripts/globaleuh.gd"
+
 [input]
 
 ui_left={

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/BackScreen/AccueilMenu.png" type="Texture" id=2]
-[ext_resource path="res://Ressources/Fonts/PixelFontTresPetit.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Ressources/Fonts/PixelFontPetit.tres" type="DynamicFont" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,51 +14,50 @@ margin_bottom = 602.0
 texture = ExtResource( 2 )
 
 [node name="Train" type="Button" parent="."]
-margin_left = 52.4044
-margin_top = 42.0132
-margin_right = 320.404
-margin_bottom = 122.013
-flat = true
-
-[node name="Label" type="Label" parent="Train"]
-margin_left = 17.4534
-margin_top = 22.2134
-margin_right = 248.453
-margin_bottom = 52.2134
+margin_left = 46.375
+margin_top = 37.4912
+margin_right = 478.375
+margin_bottom = 117.491
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "S'entrainer"
+flat = true
 
 [node name="Option" type="Button" parent="."]
-margin_left = 47.0112
-margin_top = 479.549
-margin_right = 315.011
-margin_bottom = 559.549
-flat = true
-
-[node name="Label2" type="Label" parent="Option"]
-margin_left = 49.1868
-margin_top = 30.1468
-margin_right = 272.187
-margin_bottom = 60.1468
+margin_left = 37.9559
+margin_top = 462.493
+margin_right = 366.956
+margin_bottom = 542.493
 custom_fonts/font = ExtResource( 3 )
-text = "OPTIONS"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Options"
+flat = true
 
 [node name="Start" type="Button" parent="."]
-margin_left = 598.212
-margin_top = 106.999
-margin_right = 866.212
-margin_bottom = 186.999
-rect_scale = Vector2( 1.52425, 1.52425 )
+margin_left = 610.059
+margin_top = 146.191
+margin_right = 1044.06
+margin_bottom = 203.191
+rect_scale = Vector2( 0.9, 0.9 )
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Commencons"
 flat = true
 
-[node name="Label" type="Label" parent="Start"]
-margin_left = 13.1223
-margin_top = 28.9379
-margin_right = 260.122
-margin_bottom = 58.9379
+[node name="Button" type="Button" parent="."]
+margin_left = 40.6982
+margin_top = 240.16
+margin_right = 356.698
+margin_bottom = 328.16
 custom_fonts/font = ExtResource( 3 )
-text = "Commencons"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Credits"
+flat = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510.842, 302.136 )
