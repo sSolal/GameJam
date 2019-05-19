@@ -77,7 +77,7 @@ mix_target = 2
 bus = "Music"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="EffectsSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
