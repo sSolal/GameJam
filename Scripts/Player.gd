@@ -151,6 +151,7 @@ func die(msg):
 	#get_tree().reload_current_scene()
 	
 func hit(side, damage = 1, knockback = 8):
+	$Body.modulate = Color(1,0.5,0.5)
 	if invin == false:
 		invin = true
 		position.x += knockback*side
@@ -158,6 +159,7 @@ func hit(side, damage = 1, knockback = 8):
 			yield(get_tree().create_timer(0.05),"timeout")
 			life += -damage
 		invin = false
+	$Body.modulate = Color(1,1,1)
 		
 func coinPick():
 	$CoinPick.play()
