@@ -82,6 +82,5 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
