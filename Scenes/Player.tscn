@@ -224,7 +224,7 @@ states/Run/position = Vector2( -11, 258 )
 states/idle/node = SubResource( 17 )
 states/idle/position = Vector2( 144, 95 )
 transitions = [ "idle", "Jump", SubResource( 18 ), "Jump", "Fall", SubResource( 19 ), "Run", "Jump", SubResource( 20 ), "Fall", "Run", SubResource( 21 ), "Fall", "idle", SubResource( 22 ), "idle", "Dash", SubResource( 23 ), "Dash", "Run", SubResource( 24 ), "Run", "Dash", SubResource( 25 ), "Dash", "idle", SubResource( 26 ), "idle", "Remote", SubResource( 27 ), "Remote", "idle", SubResource( 28 ), "idle", "Hit", SubResource( 29 ), "Hit", "idle", SubResource( 30 ) ]
-graph_offset = Vector2( -209.182, 147 )
+graph_offset = Vector2( -209.182, 230.56 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=32]
 
@@ -299,7 +299,7 @@ visible = false
 scale = Vector2( 0.1, 0.1 )
 z_index = 5
 frames = SubResource( 33 )
-frame = 1
+frame = 4
 playing = true
 script = ExtResource( 17 )
 

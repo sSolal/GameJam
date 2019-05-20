@@ -9,6 +9,13 @@
 position = Vector2( 0, -1.6702 )
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -886.513
+margin_top = -544.744
+margin_right = 1837.49
+margin_bottom = 1413.26
+color = Color( 0, 0, 0, 1 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 521.761, 300.024 )
 scale = Vector2( 1.02277, 1.02277 )

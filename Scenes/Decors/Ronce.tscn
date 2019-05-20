@@ -13,4 +13,3 @@ polygon = PoolVector2Array( -14.9869, -1.62767, 15.8853, -1.53793, 18.6674, -18.
 [node name="Image" type="Sprite" parent="."]
 position = Vector2( 2.03342, -20.2212 )
 texture = ExtResource( 2 )
-
