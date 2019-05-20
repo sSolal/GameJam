@@ -16,3 +16,4 @@ texture = ExtResource( 2 )
 [node name="Arbre" type="Sprite" parent="."]
 position = Vector2( -0.312049, -35.9516 )
 texture = ExtResource( 3 )
+

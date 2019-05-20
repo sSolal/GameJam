@@ -28,3 +28,4 @@ playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -9.567, -7.6204, 13.9303, -7.39447, 16.6415, 25.818, -20, 25, -20, 0, -28.0937, -3.7795, -31.2568, -19.1431, -16.3451, -24.1137 )
+
