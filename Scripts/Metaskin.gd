@@ -4,7 +4,7 @@ extends AnimatedSprite
 # var a = 2
 # var b = "text"
 var metaphSpeed = 5
-var maxSize = 15
+var maxSize = 8
 var launchposition
 # Called when the node enters the scene tree for the first time.
 func _ready():

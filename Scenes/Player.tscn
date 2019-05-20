@@ -16,9 +16,10 @@
 [ext_resource path="res://Metamorphose animation/Meta 4.png" type="Texture" id=14]
 [ext_resource path="res://Metamorphose animation/Meta 5.png" type="Texture" id=15]
 [ext_resource path="res://Metamorphose animation/Meta 6.png" type="Texture" id=16]
-[ext_resource path="res://Scripts/Metamorphose_moche.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Metaskin.gd" type="Script" id=17]
 [ext_resource path="res://Ressources/Sounds/coin1.wav" type="AudioStream" id=18]
 [ext_resource path="res://Ressources/Character/FlameAnimation.png" type="Texture" id=19]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
