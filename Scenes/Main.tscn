@@ -198,7 +198,6 @@ __meta__ = {
 }
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
-editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="LAVAworld" type="TextureRect" parent="World/ParallaxBackground"]
@@ -797,11 +796,12 @@ position = Vector2( -20.4339, -818.144 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1202.78, -2113.2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
 frames = SubResource( 2 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]

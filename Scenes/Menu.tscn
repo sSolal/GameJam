@@ -12,6 +12,8 @@ margin_top = 2.0
 margin_right = 1024.0
 margin_bottom = 602.0
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
 
 [node name="Train" type="Button" parent="."]
 margin_left = 46.375

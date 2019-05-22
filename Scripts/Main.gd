@@ -20,4 +20,5 @@ func _process(delta):
 func _on_Area2D_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.name=="Player":
 		global.score = $Player.point
+		
 		get_tree().change_scene("res://Scenes/Win.tscn")
